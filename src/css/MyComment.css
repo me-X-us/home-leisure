@@ -1,0 +1,39 @@
+.Comment {
+    margin: 30px;
+    font-size: xx-large;
+}
+
+.MyComment {
+    margin-left: 30px;
+    margin-right: 40px;
+}
+
+.MyProfile {
+    width: 40px;
+    height: 40px;
+    border-radius: 90%;
+}
+
+.Input {
+    width: 91%;
+    vertical-align: top;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #000000;
+    margin-left: 20px;
+    padding: 5px;
+    font-size: medium;
+    resize: none;
+}
+
+.CommentButton {
+    width: 60px;
+    height: 35px;
+    vertical-align: top;
+    color: #ffffff;
+    font-size: medium;
+    margin-left: 23px;
+    border: none;
+    border-radius: 0.5rem;
+}

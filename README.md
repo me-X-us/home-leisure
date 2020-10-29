@@ -15,27 +15,12 @@ this project' purpose is to create a make Repository with a collection of defaul
 ## Getting Started
 **click `Use this template` and use this template!**
 ### Depencies
-
-What things you need to install the software and how to install them
-
-    Give examples
+    npm install
 
 ### Installing
-
-A step by step series of examples that tell you how to get a development
-env running
-
-Say what the step will be
-
-    Give the example
-
-And repeat
-
-    until finished
+    npm start
 
 ## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
@@ -49,20 +34,19 @@ available, see the [tags on this repository](https://github.com/PurpleBooth/a-go
 
 ## Authors
 
-  - [Always0ne](https://github.com/Always0ne) - **SangIl Hwang** - <si8363@soongsil.ac.kr>
+  - [pangwoon](https://github.com/Namkwangwoon) - **KwangWoon Nam**
 
 See also the list of [contributors](https://github.com/always0ne/readmeTemplate/contributors)
 who participated in this project.
 
 ## Used or Referenced Projects
-- [referenced Project](/) - **LICENSE** - little of introduce
 
 ## License
 
 ```
 MIT License
 
-Copyright (c) 2020 always0ne
+Copyright (c) 2020 pangwoon
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

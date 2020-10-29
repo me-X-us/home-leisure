@@ -1,0 +1,64 @@
+.Search {
+    width: 25%;
+}
+
+.Menu-wrapper {
+    margin-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+    display: flex;
+  }
+  
+.Home {
+    margin-left: 100%;
+    color: #ffffff;;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    height: 36px;
+}
+
+.MyPage {
+  color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    height: 36px;
+}
+
+  .input {
+    position: relative;
+    margin-left: 25%;
+    padding: 10px;
+    flex: 1; /* 버튼을 뺀 빈 공간을 모두 채워줍니다 */
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-radius: 0.5rem;
+  }
+  
+  .searchButton {
+    border: none;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* margin-left: 1rem; */
+    background: #a1a1a1;
+    /* border-radius: 10px; */
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+  
+  .SearchButton:hover {
+    background: #3bc9db;
+  }

@@ -1,0 +1,19 @@
+.player {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.cam {
+  width:100%;
+   transform:rotate(0deg);
+  -moz-transform: scaleX(-1); 
+  -o-transform: scaleX(-1); 
+  -webkit-transform: scaleX(-1); 
+   transform: scaleX(-1);   
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  z-index: 2;
+}

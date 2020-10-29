@@ -1,0 +1,101 @@
+.VideoInfo {
+    margin-top: 15px;
+    margin-right: 40px;
+    margin-left: 30px;
+}
+
+.VideoName {
+    max-width: 90%;
+    font-size: xx-large;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.InputButton {
+    margin-top: 4px;
+    float: right;
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+    font-size: x-large;
+    border: none;
+    border-radius: 0.5rem;
+    margin-right: 40px;
+}
+
+ .LikeButton {
+    top: 15px;
+    float: right;
+    width: 22px;
+    height: 22px;
+    background: #ea2027;
+    position: relative;
+    transform: rotate(-135deg);
+    border: none;
+  }
+  .LikeButton::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: -0%;
+    background: #ea2027;
+    border-radius: 50%;
+  }
+  .LikeButton::after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: -0%;
+    background: #ea2027;
+    border-radius: 50%;
+  }
+
+  .Count {
+      margin-top: 10px;
+  }
+
+  .Date {
+      margin-left: 20px;
+  }
+
+.ChannelInfo {
+    margin-top: 30px;
+}
+
+.Profile {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+}
+
+.ChannelName {
+    margin-left: 20px;
+    vertical-align: top;
+    font-size: large;
+    font-weight: 500;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.SubscribeButton {
+    width: 60px;
+    height: 40px;
+    float: right;
+    color: #ffffff;
+    font-size: large;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.VideoExplain {
+    margin-left: 65px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 92%;
+    max-height: 100px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}

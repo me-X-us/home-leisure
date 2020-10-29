@@ -1,0 +1,26 @@
+.CommentList {
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.CommentInfos {
+    width: 3%;
+    padding-left: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+.CommentName {
+    font-size: small;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.CommentBody {
+    margin-top: 8px;
+    max-height: 60px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}

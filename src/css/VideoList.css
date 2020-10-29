@@ -1,0 +1,38 @@
+.Video {
+    margin: 30px;
+    text-decoration: none;
+}
+
+.Video:visited {
+    text-decoration: none;
+}
+
+.VideoName {
+    width: 300px;
+    overflow: hidden;
+    color: black;
+    font-size: large;
+    font-weight: 600;
+    line-height: 150%;
+    text-decoration: none;
+}
+
+.VideoName:visited {
+    color: black;
+    text-decoration: none;
+}
+
+
+.Channel {
+    color: black;
+    line-height: 150%;
+    text-decoration: none;
+}
+
+.Play {
+    color: black;
+}
+
+.time {
+    color: black;
+}
