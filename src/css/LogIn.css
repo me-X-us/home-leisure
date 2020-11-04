@@ -1,0 +1,50 @@
+.MainButton {
+    width: 500px;
+    height: 100px;
+    margin: 100px;
+    margin-bottom: 300px;
+    border: none;
+    border-radius: 1rem;
+    position: relative;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    display: inline-block;
+}
+
+.ID {
+    resize: none;
+    font-size: xx-large;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin: 10px;
+}
+
+.PW {
+    resize: none;
+    font-size: xx-large;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin: 10px;
+}
+
+.LogInButton {
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    border: none;
+    border-radius: 1rem;
+    font-size: xx-large;
+}
+
+.SignInButton {
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 1rem;
+    background: none;
+    font-size: xx-large;
+    text-align: center;
+}

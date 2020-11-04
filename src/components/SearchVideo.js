@@ -1,7 +1,9 @@
 import React from 'react';
 
 function SearchVideo() {
-    return ()
+    return (
+        <div></div>
+    );
 }
 
-export default SerchVideo;
+export default SearchVideo;

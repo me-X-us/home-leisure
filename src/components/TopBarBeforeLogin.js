@@ -1,12 +1,10 @@
 import React from 'react';
-import '../css/TopBar.css';
+import '../css/TopBarBeforeLogin.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from '../pages/Main';
 import Training from '../pages/Training';
 import Mypage from '../pages/Main';
 import Search from '../pages/Search';
-import LogIn from '../pages/LogIn'
-import SignIn from '../pages/SignIn'
 
 const ToolBar = ({value, onClick, onKeyPress}) => {
     return (
@@ -25,8 +23,7 @@ const ToolBar = ({value, onClick, onKeyPress}) => {
             </Link>
 
             {/* 마이페이지 */}
-            {/* <Link to='/mypage'><button className="MyPage">MyPage</button></Link> */}
-            <Link to='/login'><button className="MyPage">MyPage</button></Link>
+            <Link to='/mypage'><button className="MyPage">MyPage</button></Link>
           <ul>
           </ul>
         </div>
@@ -38,8 +35,6 @@ const ToolBar = ({value, onClick, onKeyPress}) => {
             <Route path='/training' component={Training} />
             <Route path='/mypage' component={Mypage} />
             <Route path='/Search' component={Search} />
-            <Route path='/login' component={LogIn} />
-            <Route path='/signin' components={SignIn} />
           </Switch>
         </div>
       </Router>

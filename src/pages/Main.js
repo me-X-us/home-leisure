@@ -5,7 +5,7 @@ import TopBar from '../components/TopBar'
 
 function Main() {
   return (
-    <VideoList/>
+    <VideoList />
   );
 }
 
