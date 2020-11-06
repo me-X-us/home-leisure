@@ -1,0 +1,8 @@
+.FilterButton {
+    padding: 5px;
+    border: none;
+    border-radius: 0.5rem;
+    margin-left: 15%;
+    font-size: large;
+    color: white;
+}

@@ -3,7 +3,7 @@ import '../css/VideoInfo.css'
 
 function VideoInfo() {
     return(
-        <div className='VideoInfo'>
+        <div className='VideoInfos'>
             <div>
             <text className='VideoName'>
                 영상 제목

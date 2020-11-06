@@ -9,7 +9,7 @@
 
 .VideoName {
     width: 300px;
-    overflow: hidden;
+    overflow: hidden;   /* 크기를 넘어가면 ...으로 표시 */
     color: black;
     font-size: large;
     font-weight: 600;

@@ -4,13 +4,14 @@
 
 .Menu-wrapper {
     margin-top: 1%;
+    margin-left: 3%;
+    margin-right: 10px;
     padding-bottom: 1%;
-    width: 100%;
+    width: 94%;
     display: flex;
   }
   
 .Home {
-    margin-left: 100%;
     color: #ffffff;;
     font-size: 1rem;
     font-weight: 600;

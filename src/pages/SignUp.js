@@ -1,13 +1,16 @@
 import React from 'react';
-import '../css/SignIn.css';
+import '../css/SignUp.css';
 
-function SignIn() {
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+function SignUp() {
     return (
         <div>
             <div style={{ textAlign: "center" }}>
+            <Link to='/'>
                 <button className='MainButton'>
-
                 </button>
+                </Link>
             </div>
             <div style={{ textAlign: "center" }}>
                 <input className='TextInput' placeholder='닉네임'>
@@ -46,4 +49,4 @@ function SignIn() {
     );
 }
 
-export default SignIn;
+export default SignUp;

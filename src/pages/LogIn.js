@@ -1,15 +1,16 @@
 import React from 'react';
 import '../css/LogIn.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import SignIn from './SignIn.js';
+import SignIn from './SignUp.js';
 
 const LogIn = ({value, onClick, onKeyPress}) => {
     return (
-        <Router>
             <div>
                 <div style={{ textAlign: "center" }}>
+                    <Link to='/'>
                     <button className='MainButton'>
                     </button>
+                    </Link>
                 </div>
                 <div style={{ textAlign: "center" }}>
                     <input className='TextInput' placeholder='아이디'>
@@ -26,7 +27,7 @@ const LogIn = ({value, onClick, onKeyPress}) => {
                         로그인
                     </button>
                 </div>
-                <Link to='/signin'>
+                <Link to='/signup'>
                     <div style={{ textAlign: "center" }}>
                         <button className='SignInButton'>
                             회원가입
@@ -35,13 +36,6 @@ const LogIn = ({value, onClick, onKeyPress}) => {
                 </Link>
             </div>
 
-
-            <div className='Contents-wrapper'>
-                <Switch>
-                    <Route path='/signin' component={SignIn} />
-                </Switch>
-            </div>
-        </Router >
     );
 }
 
