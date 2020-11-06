@@ -12,33 +12,37 @@
     display: inline-block;
 }
 
-.TextInput {
-    width: 500px;
+.IDInput {
+    width: 400px;
     resize: none;
     font-size: xx-large;
     padding: 10px;
     border: 2px solid black;
     border-radius: 1rem;
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
-.LogInButton {
+.DuplicateButton {
+    width: 80px;
+    height: 58px;
+    vertical-align: middle;
+    margin: none;
+    border: none;
+    border-radius: 0.8rem;
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: white;
+}
+
+.SignInAndLogInButton {
     width: 200px;
     height: 50px;
     margin: 10px;
     margin-top: 50px;
     border: none;
     border-radius: 1rem;
-    font-size: xx-large;
+    font-size: x-large;
     color: white;
-}
-
-.SignInButton {
-    width: 200px;
-    height: 50px;
-    border: none;
-    border-radius: 1rem;
-    background: none;
-    font-size: xx-large;
-    text-align: center;
 }

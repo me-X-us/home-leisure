@@ -3,22 +3,21 @@ import '../css/LogIn.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import SignIn from './SignIn.js';
 
-const Login = ({value, onClick, onKeyPress}) => {
+const LogIn = ({value, onClick, onKeyPress}) => {
     return (
         <Router>
             <div>
                 <div style={{ textAlign: "center" }}>
                     <button className='MainButton'>
-
                     </button>
                 </div>
                 <div style={{ textAlign: "center" }}>
-                    <input className='ID' placeholder='아이디'>
+                    <input className='TextInput' placeholder='아이디'>
 
                     </input>
                 </div>
                 <div style={{ textAlign: "center" }}>
-                    <input className='PW' placeholder='비밀번호'>
+                    <input className='TextInput' placeholder='비밀번호'>
 
                     </input>
                 </div>
@@ -46,4 +45,4 @@ const Login = ({value, onClick, onKeyPress}) => {
     );
 }
 
-export default Login;
+export default LogIn;

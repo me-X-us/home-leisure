@@ -5,8 +5,8 @@ import Home from '../pages/Main';
 import Training from '../pages/Training';
 import Mypage from '../pages/Main';
 import Search from '../pages/Search';
-import LogIn from '../pages/LogIn'
 import SignIn from '../pages/SignIn'
+import LogIn from '../pages/LogIn'
 
 const ToolBar = ({value, onClick, onKeyPress}) => {
     return (
