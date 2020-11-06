@@ -1,11 +1,10 @@
 import React from 'react';
 import '../css/CommentList.css';
-import CommentInfos from '../components/CommentInfos.js'
 
 function CommentList() {
     return (
         <div className='CommentList'>
-            <img className='MyProfile' src="https://avatars0.githubusercontent.com/u/59818703?s=64&v=4" />
+            <img className='MyProfile' src="https://avatars0.githubusercontent.com/u/59818703?s=64&v=4" alt=""/>
             <text>
                 <div className='CommentInfos'>
                     <div className='CommentName'>이름</div>

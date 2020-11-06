@@ -2,29 +2,29 @@ import React from 'react'
 import '../css/VideoInfo.css'
 
 function VideoInfo() {
-    return(
+    return (
         <div className='VideoInfos'>
             <div>
-            <text className='VideoName'>
-                영상 제목
-            </text>
-            <button className='LikeButton'>
-            </button>
-            <button className='InputButton'>
-                +
-            </button>
+                <text className='VideoName'>
+                    영상 제목
+                </text>
+                <button className='LikeButton'>
+                </button>
+                <button className='InputButton'>
+                    +
+                </button>
             </div>
             <div className='Count'>
                 <text>
                     조회수
                 </text>
-                
+
                 <text className='Date'>
                     날짜
                 </text>
             </div>
             <div className='ChannelInfo'>
-                <img className='Profile' src="https://avatars2.githubusercontent.com/u/18184139?s=64&v=4"/>
+                <img className='Profile' src="https://avatars2.githubusercontent.com/u/18184139?s=64&v=4" alt=""/>
                 <text className='ChannelName'>
                     채널 이름
                 </text>

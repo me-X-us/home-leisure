@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Filter.css';
 
 function Filter() {
-    return(
+    return (
         <button className='FilterButton'>필터</button>
     )
 }
