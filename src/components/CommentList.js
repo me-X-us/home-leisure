@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import '../css/CommentList.css';
 
 const CommentList = () => {
@@ -18,7 +18,7 @@ const CommentList = () => {
         <div className='CommentList'>
             <img className='MyProfile' src="https://avatars0.githubusercontent.com/u/59818703?s=64&v=4" alt=""/>
             <text>
-                <div className='CommentInfos' style={{ display: 'table-cell' /** 위치를 바로 옆에 나오게 함 */ }}>
+                <div className='CommentInfos' style={{display: 'table-cell' /** 위치를 바로 옆에 나오게 함 */}}>
                     <div className='CommentName'>
                         {name}
                     </div>

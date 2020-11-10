@@ -7,7 +7,6 @@ import Training from './pages/Training';
 import Search from './pages/Search';
 import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
-import ProfileOfUser from './pages/ProfileOfUser';
 
 function App() {
     return (
