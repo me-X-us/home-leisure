@@ -30,7 +30,7 @@ const VideoInfo = () => {
                 </text>
             </div>
             <div className='ChannelInfo'>
-                <img className='Profile' src="https://avatars2.githubusercontent.com/u/18184139?s=64&v=4" />
+                <img className='Profile' src="https://avatars2.githubusercontent.com/u/18184139?s=64&v=4" alt=""/>
                 <text className='ChannelName'>
                     {videoInfo.channelName}
                 </text>

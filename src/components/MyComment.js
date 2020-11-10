@@ -11,7 +11,7 @@ const MyComment = () => {
                 </text>
             </div>
             <div className='MyComment'>
-                <img className='MyProfile' src="https://avatars1.githubusercontent.com/u/19163372?s=60&v=4" alt="profile"/>
+                <img className='MyProfile' src="https://avatars1.githubusercontent.com/u/19163372?s=60&v=4" alt=""/>
                 <textarea className='Input' placeholder="댓글 입력"/>
                 <button className='CommentButton'>
                     입력

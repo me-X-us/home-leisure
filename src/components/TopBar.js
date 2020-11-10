@@ -29,9 +29,8 @@ const ToolBar = ({ value, onClick, onKeyPress }) => {
       </div>
 
       <hr/>
-
-    </div>
-  )
+        </div>
+    )
 }
 
 export default ToolBar;
