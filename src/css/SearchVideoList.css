@@ -1,11 +1,7 @@
-.SearchVideo {
-    margin-top: 50px;
-    margin-left: 15%;
-}
-
 .VideoImage {
     width: 400px;
     height: 250px;
+    border-radius: 1rem;
 }
 
 .VideoInfo {
@@ -23,7 +19,6 @@
     display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-
 }
 
 .SearchChannelName {

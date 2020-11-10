@@ -1,0 +1,30 @@
+.UserProfile {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    margin-top: 100px;
+    margin-right: 100px;
+}
+
+.UserInfo {
+    margin-left: 400px;
+    vertical-align: top;
+}
+
+.NickName {
+    font-size: 100px;
+    vertical-align: top;
+    text-align: center;
+    /* margin-left: 100%; */
+    margin-bottom: 150px;
+}
+
+.NickNameEditButton {
+    width: 320px;
+    height: 100px;
+    color: white;
+    font-size: xx-large;
+    border: none;
+    border-radius: 1.5rem;
+}

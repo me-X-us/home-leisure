@@ -7,8 +7,8 @@
 .CommentInfos {
     width: 3%;
     padding-left: 20px;
-    display: table-cell;
-    vertical-align: middle;
+    /* display: table-cell; */
+    vertical-align: top;
 }
 
 

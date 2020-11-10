@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 
 const ToolBar = ({ value, onClick, onKeyPress }) => {
+
+  
+
   return (
     <div className="Start">
       <div className='Menu-wrapper'>
@@ -25,7 +28,7 @@ const ToolBar = ({ value, onClick, onKeyPress }) => {
         </ul> */}
       </div>
 
-
+      <hr/>
 
     </div>
   )

@@ -4,10 +4,10 @@ import TopBar from './components/TopBar'
 import Main from './pages/Main'
 import Home from './pages/Main';
 import Training from './pages/Training';
-import Mypage from './pages/Main';
 import Search from './pages/Search';
 import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
+import ProfileOfUser from './pages/ProfileOfUser';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/training' component={Training} />
-          <Route path='/mypage' component={Mypage} />
+          <Route path='/userprofile' component={ProfileOfUser} />
           <Route path='/Search' component={Search} />
           <Route path='/login' component={LogIn} />
           <Route path='/signup' component={SignUp} />

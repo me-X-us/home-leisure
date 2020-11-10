@@ -1,9 +1,9 @@
 import React from 'react';
 import '../css/Filter.css';
 
-function Filter() {
+const Filter = () => {
     return(
-        <button className='FilterButton'>필터</button>
+        <button className='FilterButton' style={{height:"30px"}}>필터</button>
     )
 }
 

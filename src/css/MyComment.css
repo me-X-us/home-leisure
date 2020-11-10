@@ -12,10 +12,11 @@
     width: 40px;
     height: 40px;
     border-radius: 90%;
+    border: 1px solid lightgray;
 }
 
 .Input {
-    width: 91%;
+    width: 90%;
     vertical-align: top;
     border-top: none;
     border-left: none;

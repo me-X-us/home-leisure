@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CommentInfos() {
+const CommentInfos = () => {
     return (
         <div></div>
     );

@@ -1,32 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../css/VideoInfo.css'
 
-function VideoInfo() {
-    return(
+const VideoInfo = () => {
+
+    const [videoInfo, setVideoInfo] = useState({
+        videoName: "영상 제목",
+        count: "조회수",
+        channelName: "채널 이름",
+        videoExplain: "영상 설명"
+    });
+
+    return (
         <div className='VideoInfos'>
             <div>
-            <text className='VideoName'>
-                영상 제목
-            </text>
-            <button className='LikeButton'>
-            </button>
-            <button className='InputButton'>
-                +
-            </button>
+                <text className='VideoName'>
+                    {videoInfo.videoName}
+                </text>
+                <button className='LikeButton'/>
+                <button className='InputButton'>
+                    +
+                </button>
             </div>
             <div className='Count'>
                 <text>
-                    조회수
+                    {videoInfo.count}
                 </text>
-                
                 <text className='Date'>
-                    날짜
+                    {videoInfo.date}
                 </text>
             </div>
             <div className='ChannelInfo'>
-                <img className='Profile' src="https://avatars2.githubusercontent.com/u/18184139?s=64&v=4"/>
+                <img className='Profile' src="https://avatars2.githubusercontent.com/u/18184139?s=64&v=4" />
                 <text className='ChannelName'>
-                    채널 이름
+                    {videoInfo.channelName}
                 </text>
                 <button className='SubscribeButton'>
                     구독
@@ -34,10 +40,10 @@ function VideoInfo() {
             </div>
             <div className='VideoExplain'>
                 <text>
-                    영상 설명
+                    {videoInfo.videoExplain}
                 </text>
             </div>
-            <hr/>
+            <hr />
         </div>
     )
 }

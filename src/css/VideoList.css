@@ -1,5 +1,4 @@
 .Video {
-    margin: 30px;
     text-decoration: none;
 }
 
@@ -12,9 +11,12 @@
     overflow: hidden;   /* 크기를 넘어가면 ...으로 표시 */
     color: black;
     font-size: large;
-    font-weight: 600;
-    line-height: 150%;
     text-decoration: none;
+    word-break: break-all;
+    overflow: hidden;
+    display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .VideoName:visited {
@@ -24,9 +26,11 @@
 
 
 .Channel {
+    width: 300px;
     color: black;
     line-height: 150%;
-    text-decoration: none;
+    word-break: break-all;
+    overflow: hidden;
 }
 
 .Play {
