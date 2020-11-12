@@ -8,7 +8,7 @@ export const getUserId = async () =>cookie.load('userId');
 export const getUserRole = async () => cookie.load('userRole');
 
 export const getHttp = async (url, config) => {
-    await checkToken()
+    return await checkToken()
         .then(async () => {
             return await axios.get(API_BASE_URL + url, config)
                 .then((response) => response.data)
@@ -18,7 +18,7 @@ export const getHttp = async (url, config) => {
 };
 
 export const postHttp = async (url, body, config) => {
-    await checkToken()
+    return await checkToken()
         .then(async () => {
             return await axios.post(API_BASE_URL + url, body, config)
                 .then((response) =>response.data)
@@ -27,7 +27,7 @@ export const postHttp = async (url, body, config) => {
 };
 
 export const putHttp = async (url, body, config) => {
-    await checkToken()
+    return await checkToken()
         .then(async () => {
             return await axios.put(API_BASE_URL + url, body, config)
                 .then((response) => response.data);
@@ -36,7 +36,7 @@ export const putHttp = async (url, body, config) => {
 };
 
 export const deleteHttp = async (url, config) => {
-    await checkToken()
+    return await checkToken()
         .then(async () => {
             return await axios.delete(API_BASE_URL + url, config)
                 .then((response) => response.data)
