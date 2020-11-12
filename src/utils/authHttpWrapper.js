@@ -11,7 +11,6 @@ export const getHttp = async (url, config) => {
     return await checkToken()
         .then(async () => {
             return await axios.get(API_BASE_URL + url, config)
-                .then((response) => response.data)
             //.catch(error => { console.log('error : ', error.response.data) });
         });
 
@@ -21,7 +20,6 @@ export const postHttp = async (url, body, config) => {
     return await checkToken()
         .then(async () => {
             return await axios.post(API_BASE_URL + url, body, config)
-                .then((response) =>response.data)
             //.catch(error => { console.log('error : ', error.response.data) });
         })
 };
@@ -30,7 +28,6 @@ export const putHttp = async (url, body, config) => {
     return await checkToken()
         .then(async () => {
             return await axios.put(API_BASE_URL + url, body, config)
-                .then((response) => response.data);
             //.catch(error => { console.log('error : ', error.response.data) });
         })
 };
@@ -39,7 +36,6 @@ export const deleteHttp = async (url, config) => {
     return await checkToken()
         .then(async () => {
             return await axios.delete(API_BASE_URL + url, config)
-                .then((response) => response.data)
             //.catch(error => { console.log('error : ', error.response.data) });
         });
 };
@@ -48,6 +44,11 @@ export const setTokens = async (accessToken, refreshToken) => {
     setAccessToken(accessToken);
     setRefreshToken(refreshToken);
 };
+
+export const checkLoginStatus =async () =>{
+    let refreshToken = await cookie.load('refreshToken');
+    return refreshToken !== undefined;
+}
 
 const checkToken = async () => {
     let accessToken = await cookie.load('accessToken');
@@ -69,7 +70,6 @@ const refreshAccessToken = async (refreshToken) => {
         .catch(error => {
             console.log('error : ', error.response.data)
         });
-
 };
 
 const setAccessToken = (accessToken) => {
