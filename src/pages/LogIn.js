@@ -1,43 +1,56 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../css/LogIn.css';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
+import {checkLoginStatus, getUserId, postHttp, setTokens} from "../utils/authHttpWrapper";
 
 
-const LogIn = ({value, onClick, onKeyPress}) => {
+const LogIn = (props) => {
+    const [id, setId] = useState("");
+    const [password, setPassword] = useState("");
+    const onChangeId = e => setId(e.target.value);
+    const onChangePawword = e => setPassword(e.target.value);
 
+    useEffect(() => {
+        redirectHome();
+        // eslint-disable-next-line
+    }, []);
+    const redirectHome = async () => {
+        let status = await checkLoginStatus();
+        if (status) {
+            alert("이미 로그인된 상태입니다.");
+            props.history.push('/')
+        }
+    };
+    const signIn = async () => {
+        let responseData = await postHttp('/auth/signin', {
+            id: id,
+            password: password,
+        }).catch(error => {
+            alert(error.response.data.message)
+        });
+        if (responseData !== undefined) {
+            await setTokens(responseData.data.accessToken, responseData.data.refreshToken);
+            let userId = await getUserId();
+            alert(userId + "님 반갑습니다.");
+            props.setIsLogin(true)
+            props.history.push('/')
+        }
+    };
     return (
-        <div>
-            <div style={{textAlign: "center"}}>
-                <Link to='/'>
-                    <button className='MainButton'>
-                    </button>
-                </Link>
-            </div>
-            <div style={{textAlign: "center"}}>
-                <input className='TextInput' placeholder='아이디'>
-
-                </input>
-            </div>
-            <div style={{textAlign: "center"}}>
-                <input className='TextInput' placeholder='비밀번호'>
-
-                </input>
-            </div>
-            <div style={{textAlign: "center"}}>
-                <button className='LogInButton'>
-                    로그인
+        <div style={{textAlign: "center"}}>
+            <Link to='/'>
+                <button className='MainButton'>
                 </button>
-            </div>
+            </Link>
+            <input className='TextInput' value={id} placeholder='아이디' onChange={onChangeId}/>
+            <input className='TextInput' value={password} placeholder='비밀번호' onChange={onChangePawword}/>
+            <button className='LogInButton' disabled={id === '' || password === ''} onClick={signIn}> 로그인</button>
+            <br/>
             <Link to='/signup'>
-                <div style={{textAlign: "center"}}>
-                    <button className='SignInButton'>
-                        회원가입
-                    </button>
-                </div>
+                <button className='SignInButton'> 회원가입</button>
             </Link>
         </div>
-
     );
-}
+};
 
-export default LogIn;
+export default withRouter(LogIn);

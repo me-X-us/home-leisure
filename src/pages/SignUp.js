@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import '../css/SignUp.css';
 import {checkLoginStatus, getHttp, getUserId, postHttp, setTokens} from '../utils/authHttpWrapper'
 
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 const SignUp = (props) => {
     const [id, setId] = useState("");
@@ -62,6 +62,7 @@ const SignUp = (props) => {
             await setTokens(responseData.data.accessToken, responseData.data.refreshToken);
             let userId = await getUserId();
             alert(userId + "님 반갑습니다.");
+            props.setIsLogin(true)
             props.history.push('/')
         }
     };
@@ -117,4 +118,4 @@ const SignUp = (props) => {
     );
 };
 
-export default SignUp;
+export default  withRouter(SignUp);
