@@ -6,10 +6,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Build Test
-      run: ls # write Build Test Command(Find GitHub-Actions)
+      - uses: actions/checkout@v2
+      - name: Build Test
+          run: |
+            yarn install
+            yarn run build
