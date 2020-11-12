@@ -7,9 +7,9 @@ const API_BASE_URL = "https://mexus-api.herokuapp.com";
 export const getUserId = async () =>cookie.load('userId');
 export const getUserRole = async () => cookie.load('userRole');
 
-export const getHttp = async (url) => {
+export const getHttp = async (url, config) => {
     await checkToken()
-        .then(async (config) => {
+        .then(async () => {
             return await axios.get(API_BASE_URL + url, config)
                 .then((response) => response.data)
             //.catch(error => { console.log('error : ', error.response.data) });
@@ -17,27 +17,27 @@ export const getHttp = async (url) => {
 
 };
 
-export const postHttp = async (url, body) => {
+export const postHttp = async (url, body, config) => {
     await checkToken()
-        .then(async (config) => {
+        .then(async () => {
             return await axios.post(API_BASE_URL + url, body, config)
                 .then((response) =>response.data)
             //.catch(error => { console.log('error : ', error.response.data) });
         })
 };
 
-export const putHttp = async (url, body) => {
+export const putHttp = async (url, body, config) => {
     await checkToken()
-        .then(async (config) => {
+        .then(async () => {
             return await axios.put(API_BASE_URL + url, body, config)
                 .then((response) => response.data);
             //.catch(error => { console.log('error : ', error.response.data) });
         })
 };
 
-export const deleteHttp = async (url) => {
+export const deleteHttp = async (url, config) => {
     await checkToken()
-        .then(async (config) => {
+        .then(async () => {
             return await axios.delete(API_BASE_URL + url, config)
                 .then((response) => response.data)
             //.catch(error => { console.log('error : ', error.response.data) });
@@ -57,13 +57,9 @@ const checkToken = async () => {
             await refreshAccessToken(refreshToken);
             accessToken = await cookie.load('accessToken');
         }
-        return {
-            headers: {
-                Authorization: `Bearer ${accessToken}`,
-            }
-        };
+        axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
     } else
-        return null;
+        delete axios.defaults.headers.common['Authorization'];
 };
 
 const refreshAccessToken = async (refreshToken) => {
