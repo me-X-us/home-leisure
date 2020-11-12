@@ -43,32 +43,18 @@ const SignUp = () => {
 
     // }, [signupValue])
 
-    const onSubmit = () => {
-        postHttp('/auth/signup', {
+    const onSubmit = async () => {
+        let responseData = await postHttp('/auth/signup', {
             id: id,
             password: pw,
             nickName: nick,
             email: email
-        }).then((data) => console.log(data))
-            .catch(error => {
-                console.log('error on component : ', error.response.data)
-            })
-        /*
-                    .then((data)=>console.log(data))
-        */
-        /*        Axios.post('https://mexus-api.herokuapp.com/auth/signup',
-                    {
-                        id: id,
-                        password: pw,
-                        nickName: nick,
-                        email: email
-                    })
-                    .then(function (response) {
-                        console.log(response.data);
-                    })
-                    .catch(error => { console.log('error : ', error.response.data) });*/
+        }).catch(error => {
+            console.log('error on component : ', error.response.data)
+        })
+        console.log(responseData);
     }
-
+    
     useEffect(() => {
         if (pw.length < 1 || repw.length < 1) {
             SetChkpw('📝패스워드 입력📝')
