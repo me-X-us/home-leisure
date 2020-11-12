@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import '../css/SignUp.css';
-import {postCall} from '../utils/authWrapper'
+import {postHttp} from '../utils/authHttpWrapper'
 
 import {Link} from 'react-router-dom';
 
@@ -44,7 +44,7 @@ const SignUp = () => {
     // }, [signupValue])
 
     const onSubmit = () => {
-        postCall('https://mexus-api.herokuapp.com/auth/signup', {
+        postHttp('/auth/signup', {
             id: id,
             password: pw,
             nickName: nick,
