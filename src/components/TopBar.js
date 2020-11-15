@@ -1,39 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../css/TopBar.css';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 
-const ToolBar = ({value, onClick, onKeyPress}) => {
+const ToolBar = (props) => {
 
+    const [searchString, setSearchString] = useState("");
+
+    const onSearchStringChanges = e => setSearchString(e.target.value);
+
+    const search = () => props.history.push('/search?title=' + searchString);
+    const loginOrMyPage = () => {
+        let link = props.loginStatus ? "mypage" : "login";
+        props.history.push(link)
+    };
 
     return (
-        <div className="Start">
             <div className='Menu-wrapper'>
-                {/* 홈 이동 버튼 */}
                 <Link to='/'>
                     <button className="Home">Home</button>
                 </Link>
 
-                {/* 검색 */}
-                <input className='input' value={value} onClick={onClick} onKeyPress={onKeyPress}/>
-                <Link className='Search' to='/Search'>
-                    <button className="searchButton" onClick={onClick}>
-                        검색
-                    </button>
-                </Link>
+                <input className='input' value={searchString} onChange={onSearchStringChanges}/>
+                <button className="searchButton" onClick={search}>검색</button>
 
-                {/* 마이페이지 */}
-                {/* <Link to='/mypage'><button className="MyPage">MyPage</button></Link> */}
-                <Link to='/login'>
-                    <button className="MyPage">MyPage</button>
-                </Link>
-                {/* <ul>
-        </ul> */}
+                <button className="MyPage" onClick={loginOrMyPage}>{props.loginStatus ? "mypage" : "login"}</button>
+
             </div>
-
-            <hr/>
-        </div>
     )
 }
 
-export default ToolBar;
+export default withRouter(ToolBar);
