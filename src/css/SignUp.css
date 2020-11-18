@@ -7,7 +7,6 @@
     border-radius: 1rem;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-right: 20px;
 }
 
 .DuplicateButton {
@@ -18,7 +17,8 @@
     border: none;
     border-radius: 0.8rem;
     margin-bottom: 15px;
-    font-size: 25px;
+    margin-left: 20px;
+    font-size: large;
     color: white;
 }
 

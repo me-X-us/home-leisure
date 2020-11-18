@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/ProfileOfUser.css';
 import SearchVideoList from '../components/SearchVideoList';
 import VideoList from '../components/VideoList';
-import { getUserRole, getUserNickName } from '../utils/authHttpWrapper';
+import { getUserRole } from '../utils/authHttpWrapper';
 
 function ProfileOfUser() {
     const [nickName, setNickName] = useState('namoo');

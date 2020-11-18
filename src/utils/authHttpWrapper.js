@@ -6,7 +6,6 @@ const API_BASE_URL = "https://mexus-api.herokuapp.com";
 
 export const getUserId = async () => cookie.load('userId');
 export const getUserRole = async () => cookie.load('userRole');
-export const getUserNickName = async () => cookie.load('userNickName')
 
 export const getHttp = async (url, config) => {
     return await checkToken()
@@ -95,7 +94,7 @@ const setAccessToken = (accessToken) => {
     cookie.save('accessToken', accessToken,
         {
             path: '/',
-            expires: accessTokenExpires,
+            expires: accessTokenExpires
             //secure: true
             //httpOnly: true
         });

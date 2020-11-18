@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/SignUp.css';
-import {checkLoginStatus, getHttp, getUserId, postHttp, setTokens} from '../utils/authHttpWrapper'
+import { checkLoginStatus, getHttp, getUserId, postHttp, setTokens } from '../utils/authHttpWrapper'
 
-import {Link, withRouter} from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 const SignUp = (props) => {
     const [id, setId] = useState("");
@@ -94,28 +94,34 @@ const SignUp = (props) => {
     };
 
     return (
-        <div style={{textAlign: "center"}}>
+        <div style={{ textAlign: "center" }}>
             <Link to='/'>
                 <button className='MainButton'>
                 </button>
             </Link>
             <div>
-                <input className='TextInput' placeholder='닉네임' value={nick} onChange={onChangeNick}/>{chkNick}
-                <button className='DuplicateButton' onClick={checkNick}> 닉네임 중복확인</button>
-                <input className='IDInput' placeholder='아이디' value={id} onChange={onChangeId}/>{chkId}
-                <button className='DuplicateButton' onClick={checkId}> ID 중복확인</button>
-                <input className='TextInput' placeholder='비밀번호' value={pw} type="password" onChange={onChangePw}/>
-                <input className='TextInput' placeholder='비밀번호 확인' value={rePw} type="password"
-                       onChange={onChangeRepw}/>{chkPw}
-                <input className='TextInput' placeholder='이메일' type='email' value={email}
-                       onChange={onChangeEmail}/>{chkEmail}
-                <button className='SignInAndLogInButton' onClick={signUp}
+                <input className='TextInput' style={{ width: '400px' }} placeholder='닉네임' value={nick} onChange={onChangeNick} />{chkNick}
+                <button className='DuplicateButton' onClick={checkNick}> 닉네임<br/>중복확인</button>
+                <div>
+                    <input className='TextInput' style={{width:'400px'}} placeholder='아이디' value={id} onChange={onChangeId} />{chkId}
+                    <button className='DuplicateButton' onClick={checkId}> ID<br/>중복확인</button>
+                </div>
+                <input className='TextInput' placeholder='비밀번호' value={pw} type="password" onChange={onChangePw} />
+                <div>
+                    <input className='TextInput' style={{width:'500px'}} placeholder='비밀번호 확인' value={rePw} type="password"
+                        onChange={onChangeRepw} />{chkPw}
+                </div>
+                <input className='TextInput' style={{width:'500px'}} placeholder='이메일' type='email' value={email}
+                    onChange={onChangeEmail} />{chkEmail}
+                <div>
+                    <button className='SignInAndLogInButton' onClick={signUp}
                         disabled={chkPw !== '✅' || chkEmail !== '✅' || chkId !== '✅' || chkNick !== '✅'}>
-                    회원가입 후 로그인
+                        회원가입 후 로그인
                 </button>
+                </div>
             </div>
         </div>
     );
 };
 
-export default  withRouter(SignUp);
+export default withRouter(SignUp);

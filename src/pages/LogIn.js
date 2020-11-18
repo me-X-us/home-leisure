@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/LogIn.css';
-import {Link, withRouter} from 'react-router-dom';
-import {checkLoginStatus, getUserId, postHttp, setTokens} from "../utils/authHttpWrapper";
+import { Link, withRouter } from 'react-router-dom';
+import { checkLoginStatus, getUserId, postHttp, setTokens } from "../utils/authHttpWrapper";
 
 
 const LogIn = (props) => {
@@ -36,16 +36,25 @@ const LogIn = (props) => {
             props.history.push('/')
         }
     };
+
+    const onKeyPress = (e) => {
+        if (e.key === 'Enter') signIn();
+    }
+
     return (
-        <div style={{textAlign: "center"}}>
+        <div style={{ textAlign: "center" }}>
             <Link to='/'>
                 <button className='MainButton'>
                 </button>
             </Link>
-            <input className='TextInput' value={id} placeholder='아이디' onChange={onChangeId}/>
-            <input className='TextInput' value={password} placeholder='비밀번호' onChange={onChangePawword}/>
-            <button className='LogInButton' disabled={id === '' || password === ''} onClick={signIn}> 로그인</button>
-            <br/>
+            <div>
+                <input className='TextInput' value={id} placeholder='아이디' onChange={onChangeId} onKeyPress={onKeyPress} />
+            </div>
+            <input className='TextInput' value={password} placeholder='비밀번호' type='password' onChange={onChangePawword} onKeyPress={onKeyPress} />
+            <div>
+            <button className='LogInButton' disabled={id === '' || password === ''} onClick={signIn} > 로그인</button>
+            </div>
+            <br />
             <Link to='/signup'>
                 <button className='SignInButton'> 회원가입</button>
             </Link>

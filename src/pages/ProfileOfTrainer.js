@@ -3,7 +3,7 @@ import '../css/ProfileOfUser.css';
 import SearchVideoList from '../components/SearchVideoList';
 import VideoList from '../components/VideoList';
 import { Link, withRouter } from 'react-router-dom';
-import { getUserRole, getUserNickName } from '../utils/authHttpWrapper';
+import { getUserRole } from '../utils/authHttpWrapper';
 
 function ProfileOfUser() {
 
@@ -14,7 +14,7 @@ function ProfileOfUser() {
     const onChangeNickName = e => setNewNickName(e.target.value);
 
     const changeNickName = async () => {
-        let nick = await getUserNickName();      // 수정
+        // let nick = await getUserNickName();      // 수정
         if(nickNameChange===false){
             setNickNameChange(true);
         }
