@@ -6,6 +6,8 @@ const API_BASE_URL = "https://mexus-api.herokuapp.com";
 
 export const getUserId = async () => cookie.load('userId');
 export const getUserRole = async () => cookie.load('userRole');
+export const getUserNickName = async () => cookie.load('nickName');
+export const logout = async () => cookie.remove('accessToken');
 
 export const getHttp = async (url, config) => {
     return await checkToken()
@@ -48,7 +50,7 @@ export const setTokens = async (accessToken, refreshToken) => {
 export const checkLoginStatus = async () => {
     let refreshToken = await cookie.load('refreshToken');
     return refreshToken !== undefined;
-}
+};
 
 const checkToken = async () => {
     let accessToken = await cookie.load('accessToken');
@@ -64,7 +66,7 @@ const checkToken = async () => {
 };
 
 const refreshAccessToken = async (refreshToken) => {
-    return await axios.post(API_BASE_URL + "/auth/refresh", { refreshToken: refreshToken })
+    return await axios.post(API_BASE_URL + "/auth/refresh", {refreshToken: refreshToken})
         .then((response) => response.data.accessToken)
         .then((token) => setAccessToken(token))
         .catch(error => {
@@ -86,7 +88,7 @@ const setAccessToken = (accessToken) => {
             path: '/',
             expires: accessTokenExpires
         });
-    cookie.save('userNickName', decodedToken.sub,   // 여기 nickName
+    cookie.save('nickName', decodedToken.nickName,
         {
             path: '/',
             expires: accessTokenExpires
@@ -100,8 +102,8 @@ const setAccessToken = (accessToken) => {
         });
 };
 const setRefreshToken = (refreshToken) => {
-    const refreshTokenExpires = new Date(jwt_decode(refreshToken).exp * 1000)
-    refreshTokenExpires.setMinutes(refreshTokenExpires.getMinutes() - 1, 0, 0)
+    const refreshTokenExpires = new Date(jwt_decode(refreshToken).exp * 1000);
+    refreshTokenExpires.setMinutes(refreshTokenExpires.getMinutes() - 1, 0, 0);
 
     cookie.save('refreshToken', refreshToken,
         {

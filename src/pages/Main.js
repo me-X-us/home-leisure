@@ -10,6 +10,7 @@ const Main = (props) => {
     useEffect(() => {
         getHttp("/trainings").then(r => {
             setPageInfo(r.data.page);
+            if(r.data._embedded !== undefined)
             setTrainings(r.data._embedded.trainingList)
         }).catch(error => {
             alert(error.response.data.message)
