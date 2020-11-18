@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { postHttp } from '../utils/authHttpWrapper';
 
-function Upload() {
+const Upload = (props) => {
   // const [count, setCount] = useState(0);
   // const [clickCount, setClickCount] = useState(0);
 
@@ -53,7 +53,8 @@ function Upload() {
       console.log('error on component : ', error.response.data)
     })
     if (uploadVideo !== undefined) {
-      alert("<" + videoName + "> 이 업로드 되었습니다.");
+      alert("<" + videoName + "> 업로드 되었습니다.");
+      props.history.push('/mypage')
     }
   }
 
