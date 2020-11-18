@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import TopBar from './components/TopBar'
-import Home from './pages/Main'
+import Main from './pages/Main'
 import MyPage from './pages/ProfileOfTrainer'
 import Training from './pages/Training';
 import Search from './pages/Search';
@@ -27,8 +27,8 @@ function App() {
         <Router basename={process.env.PUBLIC_URL}>
             <TopBar loginStatus={loginStatus}/>
             <Switch>
-                <Route exact path='/' component={Home}/>
-                <Route path='/training' component={Training}/>
+                <Route exact path='/' component={Main}/>
+                <Route path='/training/:trainingId' component={Training}/>
                 <Route path='/mypage' component={MyPage}/>
                 <Route path='/search' component={Search}/>
                 <Route path='/login' render={() => <LogIn setIsLogin={setLoginStatus}/>}/>

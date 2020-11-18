@@ -10,9 +10,7 @@ function SearchVideoList() {
         content: "영상 설명"
     });
 
-    const onChangeVideoInfo = e => {
-        setVideoInfo(e.target.value);
-    };
+        setVideoInfo();
     return (
         <div>
             <Link to='/training' style={{textDecoration: 'none'}}>
@@ -21,7 +19,7 @@ function SearchVideoList() {
 
                     <img className="VideoImage"
                          src='https://tistory4.daumcdn.net/tistory/3028340/skin/images/bts_sreenshot.001.jpeg'
-                         style={{verticalAlign: 'top'}}/>
+                         style={{verticalAlign: 'top'}} alt=''/>
                     <text>
                         <div className='VideoInfo'>
                             <div className='SearchVideoName' style={{width: "800px", maxHeight: "80px"}}>
@@ -45,8 +43,6 @@ function SearchVideoList() {
                         </div>
                     </text>
                 </div>
-
-
             </Link>
         </div>
     );

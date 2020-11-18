@@ -1,8 +1,8 @@
 import React from 'react';
 import '../css/MyComment.css';
-import CommentList from './CommentList.js';
 
 const MyComment = () => {
+
     return (
         <div>
             <div className='Comment'>
@@ -17,7 +17,6 @@ const MyComment = () => {
                     입력
                 </button>
             </div>
-            <CommentList/>
         </div>
     );
 }

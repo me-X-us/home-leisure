@@ -1,15 +1,27 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../css/Main.css';
-import VideoList from '../components/VideoList';
+import {getHttp} from "../utils/authHttpWrapper";
+import Trainings from "../components/Trainings";
 
-class Main extends React.Component {
-  render() {
+const Main = (props) => {
+
+    const [trainings, setTrainings] = useState([]);
+    const [pageInfo, setPageInfo] = useState();
+    useEffect(() => {
+        getHttp("/trainings").then(r => {
+            setPageInfo(r.data.page);
+            setTrainings(r.data._embedded.trainingList)
+        }).catch(error => {
+            alert(error.response.data.message)
+        });
+    }, []);
+    console.log(pageInfo)
+
     return (
-      <div style={{margin:'30px'}}>
-        <VideoList />
-      </div>
-    );
-  }
-}
+        <div style={{margin: '30px'}}>
+            <Trainings trainings={trainings}/>
+        </div>
+    )
+};
 
 export default Main;
