@@ -1,12 +1,21 @@
 import React from 'react';
 import '../css/Player.css';
-import Webcam from 'react-webcam';
 import ReactPlayer from 'react-player';
+import PoseNet from '../utils/posenet/components/PoseNet'
+import estimation from '../utils/Estimation'
 
-function player() {
+const framerate = 30;
+const minPoseConfidence = 0;
+var time = Date.now();
+
+function test(a){
+    console.log(time);
+}
+
+function Player() {
     return (
         <div>
-            <div className="player">
+            <div className="Player">
                 <ReactPlayer
                     url='https://www.youtube.com/watch?v=gdZLi9oWNZg' playing controls
                     width="100%"
@@ -14,15 +23,16 @@ function player() {
                 />
             </div>
             <div className="cam">
-                <Webcam
-                    audio={false}
-                    screenshotFormat="image/jpeg"
-                    forceScreenshotSourceSize="true"
-                    width="100%"
+                <PoseNet
+                    // onEstimate={test}
+                    onEstimate={estimation}
+                    frameRate={framerate}
+                    flipHorizontal={true}
+                    minPoseConfidence={minPoseConfidence}
                 />
             </div>
         </div>
     );
 }
 
-export default player;
+export default Player;
