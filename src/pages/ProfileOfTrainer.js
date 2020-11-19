@@ -1,13 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../css/ProfileOfUser.css';
 import SearchVideoList from '../components/SearchVideoList';
 import {Link} from 'react-router-dom';
+import {getUserNickName} from '../utils/authHttpWrapper';
 
-function ProfileOfUser() {
-
-    const [nickName, setNickName] = useState('??');
+const ProfileOfUser = (props) => {
+    const [nickName, setNickName] = useState('');
     const [nickNameChange, setNickNameChange] = useState(false);
     const [newNickName, setNewNickName] = useState('');
+
+    useEffect(() => {
+        getUserNickName().then( r => setNickName(r) )
+    },[])
 
     const onChangeNickName = e => setNewNickName(e.target.value);
 
@@ -60,8 +64,7 @@ function ProfileOfUser() {
                                 color: 'white',
                                 fontSize: 'xx-large',
                                 verticalAlign: 'center'
-                            }}
-                                    onClick={{}}>
+                            }}>
                                 +
                             </button>
                         </Link>

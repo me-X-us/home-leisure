@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import '../css/SearchVideoList.css';
 
@@ -10,7 +10,16 @@ function SearchVideoList() {
         content: "영상 설명"
     });
 
-        setVideoInfo();
+    useEffect(()=>{
+        setVideoInfo({
+            videoName: "영상 제목",
+            chanelName: "채널이름",
+            view: "날짜",
+            content: "영상 설명"
+        });
+    },[])
+
+
     return (
         <div>
             <Link to='/training' style={{textDecoration: 'none'}}>

@@ -3,10 +3,17 @@ import MyComment from '../components/MyComment.js'
 import VideoInfo from '../components/VideoInfo.js'
 import {getHttp} from "../utils/authHttpWrapper";
 import Comment from "../components/Comment";
+import { now } from 'moment';
 import Player from '../components/Player'
 
 const Training = (props) => {
-    const [trainingInfo, setTrainingInfo] = useState('');
+    const [trainingInfo, setTrainingInfo] = useState({
+        title: '',
+        trainerId: '',
+        trainer: '',
+        body: '',
+        createdDate: new Date(now)
+    });
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
@@ -16,18 +23,24 @@ const Training = (props) => {
             .then(response => {
                 if(response.data.page.totalElements !==0)
                     setComments(response.data._embedded.commentList)
-                console.log(response)
             })
     }, [props.match.params.trainingId]);
 
+    const refreshComments = () =>{
+        getHttp("/comments/"+props.match.params.trainingId)
+            .then(response => {
+                if(response.data.page.totalElements !==0)
+                    setComments(response.data._embedded.commentList)
+            })
+    }
     return (
         <div>
             <Player/>
             <div style={{height: 1000, backgroundColor: 'black'}}>
             </div>
             <VideoInfo trainingInfo={trainingInfo}/>
-            <MyComment/>
-            {comments.map((comment,index)=><Comment key={index} comment={comment}/>)}
+            <MyComment trainingId={props.match.params.trainingId} refresh={refreshComments}/>
+            {comments.map((comment,index)=><Comment key={index} commentId={props.match.params.commentId} comment={comment} refresh={refreshComments}/>)}
         </div>
     );
 };

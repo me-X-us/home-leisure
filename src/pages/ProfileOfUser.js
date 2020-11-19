@@ -29,7 +29,7 @@ function ProfileOfUser() {
                             내가 담은 운동
                         </div>
                         <div style={{backgroundColor: 'lightgray', width: '1220px', height: '800px', padding: '20px'}}>
-                            <SearchVideoList/>
+                            <SearchVideoList/> 
                         </div>
                     </div>
                 </text>
