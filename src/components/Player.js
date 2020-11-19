@@ -6,11 +6,6 @@ import estimation from '../utils/Estimation'
 
 const framerate = 30;
 const minPoseConfidence = 0;
-var time = Date.now();
-
-function test(a){
-    console.log(time);
-}
 
 function Player() {
     return (
@@ -24,7 +19,6 @@ function Player() {
             </div>
             <div className="cam">
                 <PoseNet
-                    // onEstimate={test}
                     onEstimate={estimation}
                     frameRate={framerate}
                     flipHorizontal={true}
