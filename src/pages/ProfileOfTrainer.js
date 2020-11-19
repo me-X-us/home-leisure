@@ -64,8 +64,7 @@ const ProfileOfUser = (props) => {
                                 color: 'white',
                                 fontSize: 'xx-large',
                                 verticalAlign: 'center'
-                            }}
-                                    onClick={{}}>
+                            }}>
                                 +
                             </button>
                         </Link>
