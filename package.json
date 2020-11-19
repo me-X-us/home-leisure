@@ -4,6 +4,12 @@
   "homepage": "https://me-x-us.github.io/home-leisure",
   "private": true,
   "dependencies": {
+    "@tensorflow-models/posenet": "^2.2.1",
+    "@tensorflow/tfjs": "^1.7.4",
+    "@tensorflow/tfjs-core": "^1.7.4",
+    "await-to-js": "^2.1.1",
+    "regenerator-runtime": "^0.13.5",
+    "use-user-media": "^0.1.7",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
