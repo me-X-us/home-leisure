@@ -10,7 +10,13 @@ function SearchVideoList() {
         content: "영상 설명"
     });
 
-        setVideoInfo();
+    setVideoInfo({
+        videoName: '',
+        channelName: '',
+        view: '',
+        content: ''
+    });
+
     return (
         <div>
             <Link to='/training' style={{textDecoration: 'none'}}>
