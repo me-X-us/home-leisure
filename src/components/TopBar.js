@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import '../css/TopBar.css';
-import { Link, withRouter } from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 
 const TopBar = (props) => {
-
     const [searchString, setSearchString] = useState("");
-
 
     const onSearchStringChanges = e => setSearchString(e.target.value);
 
@@ -16,10 +14,10 @@ const TopBar = (props) => {
         props.history.push(link)
     };
     const onKeyPress = (e) => {
-        if(e.key == 'Enter' && searchString !== "") {
+        if (e.key === 'Enter' && searchString !== "") {
             search();
         }
-    }
+    };
 
     return (
         <div className='Menu-wrapper'>
@@ -32,6 +30,6 @@ const TopBar = (props) => {
             <button className="MyPage" onClick={loginOrMyPage}>{props.loginStatus ? "mypage" : "login"}</button>
         </div>
     )
-}
+};
 
 export default withRouter(TopBar);

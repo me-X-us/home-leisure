@@ -1,20 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import '../css/VideoInfo.css'
 
-const VideoInfo = () => {
-
-    const [videoInfo, setVideoInfo] = useState({
-        videoName: "영상 제목",
-        count: "조회수",
-        channelName: "채널 이름",
-        videoExplain: "영상 설명"
-    });
-
+const VideoInfo = (props) => {
     return (
         <div className='VideoInfos'>
             <div>
                 <text className='VideoName'>
-                    {videoInfo.videoName}
+                    {props.trainingInfo.title}
                 </text>
                 <button className='LikeButton'/>
                 <button className='InputButton'>
@@ -23,16 +15,16 @@ const VideoInfo = () => {
             </div>
             <div className='Count'>
                 <text>
-                    {videoInfo.count}
+                    {props.trainingInfo.views}
                 </text>
                 <text className='Date'>
-                    {videoInfo.date}
+                    {props.trainingInfo.modifiedDate}
                 </text>
             </div>
             <div className='ChannelInfo'>
                 <img className='Profile' src="https://avatars2.githubusercontent.com/u/18184139?s=64&v=4" alt=""/>
                 <text className='ChannelName'>
-                    {videoInfo.channelName}
+                    {props.trainingInfo.trainer}
                 </text>
                 <button className='SubscribeButton'>
                     구독
@@ -40,7 +32,7 @@ const VideoInfo = () => {
             </div>
             <div className='VideoExplain'>
                 <text>
-                    {videoInfo.videoExplain}
+                    {props.trainingInfo.body}
                 </text>
             </div>
             <hr/>
