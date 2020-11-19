@@ -4,6 +4,7 @@ import VideoInfo from '../components/VideoInfo.js'
 import {getHttp} from "../utils/authHttpWrapper";
 import Comment from "../components/Comment";
 import { now } from 'moment';
+import Player from '../components/Player'
 
 const Training = (props) => {
     const [trainingInfo, setTrainingInfo] = useState({
@@ -34,7 +35,7 @@ const Training = (props) => {
     }
     return (
         <div>
-            {/* <Player /> */}
+            <Player/>
             <div style={{height: 1000, backgroundColor: 'black'}}>
             </div>
             <VideoInfo trainingInfo={trainingInfo}/>
