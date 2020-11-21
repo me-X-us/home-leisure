@@ -2,7 +2,7 @@ import axios from 'axios';
 import cookie from 'react-cookies'
 import jwt_decode from "jwt-decode";
 
-export const API_BASE_URL = "https://mexusapi.codingnome.dev";
+const API_BASE_URL = "https://mexus-api.herokuapp.com";
 
 export const getUserId = async () => cookie.load('userId');
 export const getUserRole = async () => cookie.load('userRole');
