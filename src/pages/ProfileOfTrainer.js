@@ -8,7 +8,7 @@ const ProfileOfTrainer = (props) => {
     const [nickName, setNickName] = useState('');
     const [nickNameChange, setNickNameChange] = useState(false);
     const [newNickName, setNewNickName] = useState('');
-    const imgDefault = 'https://avatars1.githubusercontent.com/u/50524321?s=400&u=7621eb647ffc21484a8ddb3914275574063c08cb&v=4';
+    const imgDefault = 'https://avatars1.githubusercontent.com/u/50524321?s=460&u=7621eb647ffc21484a8ddb3914275574063c08cb&v=4';
     const [imgPreview, setImagePreview] = useState('');
     const [imgUpload, setImgUpload] = useState('');
     const [imgChanging, setImageChanging] = useState(false);
@@ -74,7 +74,7 @@ const ProfileOfTrainer = (props) => {
         <div>
             <div style={{ height:'507px', marginBottom: '200px', marginLeft: '200px', float: 'left', display: 'flex', alignItems: 'flex-end', textAlign: 'center' }}>
                 <div>
-                    <img onError={onImageError} className='UserProfile' src={imgChanging?imgPreview:imgUpload}></img>
+                    <img onError={onImageError} className='UserProfile' src={imgChanging?imgPreview:imgUpload} alt={''}></img>
                     {imgChanging ? <div><input type='file' accept='image/jpg,impge/png,image/jpeg,image/gif' onChange={onImageChanged} style={{width:'150px'}} alt={""} /></div>:<br/>}
                     <button onClick={submitImage} style={{ marginTop: '10px', background: 'none', border: 'none' }}>프로필 편집</button>
                 </div>

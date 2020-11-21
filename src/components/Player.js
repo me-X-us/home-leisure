@@ -6,11 +6,11 @@ import estimation from '../utils/Estimation'
 
 const framerate = 30;
 const minPoseConfidence = 0;
-var time = Date.now();
+// var time = Date.now();
 
-function test(a){
-    console.log(time);
-}
+// function test(a){
+//     console.log(time);
+// }
 
 function Player() {
     return (
