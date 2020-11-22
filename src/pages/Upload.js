@@ -2,27 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {postHttp} from '../utils/authHttpWrapper';
 
 const Upload = (props) => {
-    // const [count, setCount] = useState(0);
-    // const [clickCount, setClickCount] = useState(0);
-
-    // // componentDidMount, componentDidUpdate와 비슷합니다
-    // useEffect(() => {
-    //   // 브라우저 API를 이용해 문서의 타이틀을 업데이트합니다
-    //   document.title = `You clicked ${count} times ${clickCount}`;
-    // }, [count]);
-
-    // return (
-    //   <div>
-    //     <p>You clicked {count} times and {clickCount}</p>
-    //     <p>{document.title}</p>
-    //     <button onClick={() => setCount(count + 1)}>
-    //       Click me
-    //     </button>
-    //     <button onClick={() => setClickCount(clickCount+1)}>
-    //         Not Effect
-    //     </button>
-    //   </div>
-    // );
 
     const [uploadAvailable, setUploadAvailable] = useState(false);
     //const [video, setVideo] = useState(null);
@@ -56,7 +35,7 @@ const Upload = (props) => {
             props.history.push('/mypage')
         }
     }
-
+    
     return (
         <div style={{marginLeft: 'px', textAlign: 'center'}}>
             <div>
