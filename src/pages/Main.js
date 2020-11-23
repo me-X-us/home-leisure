@@ -20,7 +20,7 @@ const Main = (props) => {
     console.log(pageInfo)
 
     return (
-        <div style={{ margin: '30px' }}>
+        <div className='Trainings'>
             <Trainings trainings={trainings} />
         </div>
     )

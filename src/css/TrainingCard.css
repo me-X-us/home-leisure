@@ -1,9 +1,13 @@
 .Video {
+    width: 400px;
+}
+
+.TrainingCardWrapper {
     text-decoration: none;
 }
 
-.Video:visited {
-    text-decoration: none;
+.ThumbNail{
+    border-radius: 1rem;
 }
 
 .VideoName {

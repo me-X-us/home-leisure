@@ -3,7 +3,7 @@ import '../css/Filter.css';
 
 const Filter = () => {
     return(
-        <button className='FilterButton' style={{height:"30px"}}>필터</button>
+        <button className='FilterButton'>필터</button>
     )
 }
 

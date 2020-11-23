@@ -1,3 +1,13 @@
+.ProfileInfo {
+    height: 507px;
+    margin-bottom: 200px;
+    margin-left: 200px;
+    float: left;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+}
+
 .UserProfile {
     width: 350px;
     height: 350px;
@@ -6,9 +16,20 @@
     margin-top: 100px;
 }
 
-.UserInfo {
+.ProfileImgInput {
+    width: 150px;
+}
+
+.ProfileImgEditButton {
+    margin-top: 10px;
+    background: none;
+    border: none;
+}
+
+.NickNameInfo {
     margin-left: 400px;
     vertical-align: top;
+    display: table-cell;
 }
 
 .NickName {
@@ -26,4 +47,37 @@
     font-size: xx-large;
     border: none;
     border-radius: 1.5rem;
+}
+
+.MyTrainingArea1 {
+    margin-left: 130px;
+}
+
+.MyTrainingArea2 {
+    display: table-cell;
+}
+
+.MyUploadTrainingListTitle {
+    font-size: xx-large;
+}
+
+.UploadButton {
+    float: right;
+    width: 42px;
+    height: 42px;                            
+    background: lightgray;
+    padding-top: 0px;
+    border: none;
+    border-radius: 0.7rem;
+    color: white;
+    font-size: xx-large;
+    vertical-align: center;
+}
+
+.MyUploadTriningListBackground {
+    background-color: lightgray;
+    width: 1500px;
+    height: 800px;
+    padding: 20px;
+    margin-top: 10px;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/VideoList.css' // 충돌날까봐 일단 파일 이름은 안바꿧음!!
-import {Link} from 'react-router-dom';
+import '../css/TrainingCard.css' // 충돌날까봐 일단 파일 이름은 안바꿧음!!
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/ko';
 
@@ -22,24 +22,23 @@ const TrainingCard = (props) => {
     };
 
     return (
-        <div className='Video' style={{width: '400px'}}>
-            <Link to={"/training/"+props.training.trainingId} style={{textDecoration: 'none'}}>
-                <img src='https://tistory4.daumcdn.net/tistory/3028340/skin/images/bts_sreenshot.001.jpeg'
-                     position="relative" opacity="0.5" width="300" height="190" alt=""
-                     style={{borderRadius: '1rem'}}/>
-                    <font className='VideoName'>
-                        {props.training.title}<br/>
-                    </font>
-                    <font className='Channel'>
-                        {props.training.trainer}<br/>
-                    </font>
-                    <font className='Play'>
-                        {"조회수 " + props.training.views + "회"}
-                    </font>
-                    &nbsp;-&nbsp;
+        <div className='Video'>
+            <Link className='TrainingCardWrapper' to={"/training/" + props.training.trainingId}>
+                <img className='ThumbNail' src='https://tistory4.daumcdn.net/tistory/3028340/skin/images/bts_sreenshot.001.jpeg'
+                    position="relative" opacity="0.5" width="300" height="190" alt=""/>
+                <font className='VideoName'>
+                    {props.training.title}<br />
+                </font>
+                <font className='Channel'>
+                    {props.training.trainer}<br />
+                </font>
+                <font className='Play'>
+                    {"조회수 " + props.training.views + "회"}
+                </font>
+                &nbsp;-&nbsp;
                     <font className='time'>
-                        {setDate(props.training.modifiedDate)}
-                    </font>
+                    {setDate(props.training.modifiedDate)}
+                </font>
             </Link>
         </div>
     );

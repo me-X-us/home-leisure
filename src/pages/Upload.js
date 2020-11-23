@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import {postHttp} from '../utils/authHttpWrapper';
+import React, { useEffect, useState } from 'react';
+import { postHttp } from '../utils/authHttpWrapper';
+import '../css/Upload.css';
 
 const Upload = (props) => {
     // const [count, setCount] = useState(0);
@@ -58,59 +59,17 @@ const Upload = (props) => {
     }
 
     return (
-        <div style={{marginLeft: 'px', textAlign: 'center'}}>
-            <div>
-                <button style={{
-                    width: '63%',
-                    height: '500px',
-                    marginRight: '1%',
-                    fontSize: 'xx-large',
-                    background: 'lightgray',
-                    border: 'none',
-                    borderRadius: '1rem'
-                }}>
-                    업로드할 영상을 선택해주세요.
+        <div className='UploadWrapper'>
+            <button className='VideoUpload'>업로드할 영상을 선택해주세요.</button>
+            <button className='ThumbNailUpload'>
+                대표사진을 선택해주세요.
                 </button>
-                <button style={{
-                    width: '33%',
-                    height: '500px',
-                    fontSize: 'xx-large',
-                    background: 'lightgray',
-                    border: 'none',
-                    borderRadius: '1rem'
-                }}>
-                    대표사진을 선택해주세요.
-                </button>
-            </div>
-            <input placeholder='영상 제목 입력' onChange={changeVideoName} style={{
-                width: '96%',
-                marginTop: '20px',
-                padding: '5px',
-                fontSize: 'xx-large',
-                border: 'solid 2px black',
-                borderRadius: '0.5rem'
-            }}/>
-            <div>
-                <textarea placeholder='내용을 입력해주세요.' onChange={changeVideoExplain} style={{
-                    width: '96%',
-                    height: '500px',
-                    marginTop: '20px',
-                    padding: '5px',
-                    fontSize: 'large',
-                    border: 'solid 2px black',
-                    borderRadius: '0.5rem',
-                    resize: 'none'
-                }}/>
-            </div>
-            <button disabled={!uploadAvailable} onClick={upload} style={{
-                width: '300px',
-                height: '75px',
-                fontSize: 'xx-large',
-                background: 'lightgray',
-                margin: '30px',
-                border: 'none',
-                borderRadius: '1rem'
-            }}>
+            <br />
+            <input className='UploadTitle' placeholder='영상 제목 입력' onChange={changeVideoName} />
+            <br />
+            <textarea className='UploadBody' placeholder='내용을 입력해주세요.' onChange={changeVideoExplain} />
+            <br/>
+            <button className='VideoUploadButton' disabled={!uploadAvailable} onClick={upload}>
                 영상 올리기
             </button>
         </div>

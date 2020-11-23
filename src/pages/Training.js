@@ -19,7 +19,7 @@ const Training = (props) => {
     useEffect(() => {
         getHttp("/trainings/" + props.match.params.trainingId)
             .then(response => setTrainingInfo(response.data))
-            .then(async () => await getHttp("/comments/"+props.match.params.trainingId))
+            .then(async () => await getHttp("/trainings/"+props.match.params.trainingId+"/comments"))
             .then(response => {
                 if(response.data.page.totalElements !==0)
                     setComments(response.data._embedded.commentList)
@@ -27,7 +27,7 @@ const Training = (props) => {
     }, [props.match.params.trainingId]);
 
     const refreshComments = () =>{
-        getHttp("/comments/"+props.match.params.trainingId)
+        getHttp("/trainings/"+props.match.params.trainingId + '/comments')
             .then(response => {
                 if(response.data.page.totalElements !==0)
                     setComments(response.data._embedded.commentList)
@@ -36,8 +36,6 @@ const Training = (props) => {
     return (
         <div>
             <Player/>
-            <div style={{height: 1000, backgroundColor: 'black'}}>
-            </div>
             <VideoInfo trainingInfo={trainingInfo}/>
             <MyComment trainingId={props.match.params.trainingId} refresh={refreshComments}/>
             {comments.map((comment,index)=><Comment key={index} commentId={props.match.params.commentId} comment={comment} refresh={refreshComments}/>)}

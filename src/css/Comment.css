@@ -2,6 +2,7 @@
     margin-left: 30px;
     margin-top: 50px;
     margin-bottom: 50px;
+    display: flex;
 }
 
 .CommentInfos {
@@ -9,6 +10,7 @@
     padding-left: 20px;
     /* display: table-cell; */
     vertical-align: top;
+    display: table-cell;
 }
 
 
@@ -23,4 +25,14 @@
     max-height: 60px;
     overflow: hidden; 
     text-overflow: ellipsis;
+}
+
+.Modify {
+    background: none;
+    border: none;
+}
+
+.Delete {
+    background: none;
+    border: none;
 }

@@ -20,6 +20,10 @@ const ProfileOfTrainer = (props) => {
             .then(userId => setImgUpload(API_BASE_URL + '/profile/' + userId + '/image'))
     }, [])
 
+    useEffect(() => {
+
+    }, [imgUpload])
+
     const onChangeNickName = e => setNewNickName(e.target.value);
 
     const changeNickName = async () => {
@@ -72,14 +76,14 @@ const ProfileOfTrainer = (props) => {
 
     return (
         <div>
-            <div style={{ height:'507px', marginBottom: '200px', marginLeft: '200px', float: 'left', display: 'flex', alignItems: 'flex-end', textAlign: 'center' }}>
+            <div className='ProfileInfo'>
                 <div>
                     <img onError={onImageError} className='UserProfile' src={imgChanging?imgPreview:imgUpload} alt={''}></img>
-                    {imgChanging ? <div><input type='file' accept='image/jpg,impge/png,image/jpeg,image/gif' onChange={onImageChanged} style={{width:'150px'}} alt={""} /></div>:<br/>}
-                    <button onClick={submitImage} style={{ marginTop: '10px', background: 'none', border: 'none' }}>프로필 편집</button>
+                    {imgChanging ? <div><input className='ProfileImgInput' type='file' accept='image/jpg,impge/png,image/jpeg,image/gif' onChange={onImageChanged} alt={""} /></div>:<br/>}
+                    <button className='ProfileImgEditButton' onClick={submitImage}>프로필 편집</button>
                 </div>
-                <div style={{ marginLeft: '400px' }}>
-                    <div className='UserInfo' style={{ display: 'table-cell' }}>
+                <div className='NickNameInfo'>
+                    <div>
                         <div className='NickName'>{nickNameChange ?
                             <input onChange={onChangeNickName} onKeyPress={onKeyPress}
                                 placeholder={nickName} /> : nickName}</div>
@@ -87,36 +91,15 @@ const ProfileOfTrainer = (props) => {
                     </div>
                 </div>
             </div>
-            <div style={{ marginLeft: '130px' }}>
-                <div style={{ display: 'table-cell', marginRight: '10px' }}>
-                    <text style={{ fontSize: 'xx-large' }}>
+            <div className='MyTrainingArea1'>
+                <div className='MyTrainingArea2'>
+                    <text className="MyUploadTrainingListTitle">
                         내가 올린 운동
                         </text>
                     <Link to='/upload'>
-                        <button style={{
-                            float: 'right',
-                            width: '42px',
-                            height: '42px',
-                            background: 'lightgray',
-                            paddingTop: '0px',
-                            border: 'none',
-                            borderRadius: '0.7rem',
-                            color: 'white',
-                            fontSize: 'xx-large',
-                            verticalAlign: 'center'
-                        }}>
-                            +
-                            </button>
+                        <button className='UploadButton'>+</button>
                     </Link>
-                    <div style={{
-                        backgroundColor: 'lightgray',
-                        width: '1500px',
-                        height: '800px',
-                        padding: '20px',
-                        marginTop: '10px'
-                    }}>
-                        <SearchVideoList />
-                    </div>
+                    <div className='MyUploadTriningListBackground'><SearchVideoList /></div>
                 </div>
 
                 {/* <text style={{marginLeft:'20px'}}>

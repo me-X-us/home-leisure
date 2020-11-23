@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/CommentList.css';
+import '../css/Comment.css';
 import { getUserId, putHttp, deleteHttp } from '../utils/authHttpWrapper'
 
 const Comment = (props) => {
@@ -14,7 +14,10 @@ const Comment = (props) => {
         if (userId === props.comment.commenterId && isModify === false) {
             setIsModify(true)
         }
-        else if (userId === props.comment.commenterId && isModify === true) {
+        else if (userId === props.comment.commenterId && isModify === true && modifiedComment === '') {
+            setIsModify(false)
+        }
+        else if (userId === props.comment.commenterId && isModify === true && modifiedComment !== '') {
             await putHttp('/comments/' + props.comment.commentId, {
                 message: modifiedComment
             }).catch(error => {
@@ -52,18 +55,18 @@ const Comment = (props) => {
     return (
         <div className='CommentList'>
             <img className='MyProfile' src="https://avatars0.githubusercontent.com/u/59818703?s=64&v=4" alt="" />
-            <text>
-                <div className='CommentInfos' style={{ display: 'table-cell' /** 위치를 바로 옆에 나오게 함 */ }}>
+            <div>
+                <div className='CommentInfos'>
                     <div className='CommentName'>
                         {props.comment.commenterId}
                     </div>
                     <div className='CommentBody'>
-                        {isModify ? <input value={modifiedComment} onChange={onChangeModifedComment} onKeyPress={onKeyPress} /> : props.comment.message}
+                        {isModify ? <input value={modifiedComment} placeholder={props.comment.message} onChange={onChangeModifedComment} onKeyPress={onKeyPress} /> : props.comment.message}
                     </div>
-                    <button className='Modify' onClick={onModifyComment} style={{ background: 'none', border: 'none' }} >수정</button>
-                    <button className='Delete' onClick={onDeleteComment} style={{ background: 'none', border: 'none' }} >삭제</button>
+                    <button className='Modify' onClick={onModifyComment} >수정</button>
+                    <button className='Delete' onClick={onDeleteComment} >삭제</button>
                 </div>
-            </text>
+            </div>
         </div>
     );
 };
