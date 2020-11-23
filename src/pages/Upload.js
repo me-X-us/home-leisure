@@ -3,27 +3,6 @@ import { postHttp } from '../utils/authHttpWrapper';
 import '../css/Upload.css';
 
 const Upload = (props) => {
-    // const [count, setCount] = useState(0);
-    // const [clickCount, setClickCount] = useState(0);
-
-    // // componentDidMount, componentDidUpdate와 비슷합니다
-    // useEffect(() => {
-    //   // 브라우저 API를 이용해 문서의 타이틀을 업데이트합니다
-    //   document.title = `You clicked ${count} times ${clickCount}`;
-    // }, [count]);
-
-    // return (
-    //   <div>
-    //     <p>You clicked {count} times and {clickCount}</p>
-    //     <p>{document.title}</p>
-    //     <button onClick={() => setCount(count + 1)}>
-    //       Click me
-    //     </button>
-    //     <button onClick={() => setClickCount(clickCount+1)}>
-    //         Not Effect
-    //     </button>
-    //   </div>
-    // );
 
     const [uploadAvailable, setUploadAvailable] = useState(false);
     //const [video, setVideo] = useState(null);
@@ -57,7 +36,7 @@ const Upload = (props) => {
             props.history.push('/mypage')
         }
     }
-
+    
     return (
         <div className='UploadWrapper'>
             <button className='VideoUpload'>업로드할 영상을 선택해주세요.</button>

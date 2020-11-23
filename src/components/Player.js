@@ -24,7 +24,6 @@ function Player() {
             </div>
             <div className="cam">
                 <PoseNet
-                    // onEstimate={test}
                     onEstimate={estimation}
                     frameRate={framerate}
                     flipHorizontal={true}
