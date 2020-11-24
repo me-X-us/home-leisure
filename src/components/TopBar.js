@@ -10,7 +10,7 @@ const TopBar = (props) => {
 
     const search = () => props.history.push('/search?title=' + searchString);
     const loginOrMyPage = () => {
-        let link = props.loginStatus ? "mypage" : "login";
+        let link = props.loginStatus ? "/mypage" : "/login";
         props.history.push(link)
     };
     const onKeyPress = (e) => {
