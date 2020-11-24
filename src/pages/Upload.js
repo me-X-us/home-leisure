@@ -30,7 +30,8 @@ const Upload = (props) => {
             title: videoName,
             body: videoExplain
         }).then(response => {
-            tID = response.data._links.self.href.slice(-1);
+            let arr = response.data._links.self.href.split('/');
+            tID = arr[arr.length-1];
             const fd = new FormData();
             // console.log(fd)
             fd.append('image', thumbnail)

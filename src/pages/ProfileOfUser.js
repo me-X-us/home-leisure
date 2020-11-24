@@ -28,9 +28,9 @@ function ProfileOfUser() {
                         <div style={{fontSize: 'xx-large', marginBottom: '10px'}}>
                             내가 담은 운동
                         </div>
-                        <div style={{backgroundColor: 'lightgray', width: '1220px', height: '800px', padding: '20px'}}>
+                        {/* <div style={{backgroundColor: 'lightgray', width: '1220px', height: '800px', padding: '20px'}}>
                             <SearchVideoList/> 
-                        </div>
+                        </div> */}
                     </div>
                 </text>
 
@@ -39,9 +39,9 @@ function ProfileOfUser() {
                         <div style={{fontSize: 'xx-large', marginBottom: '10px'}}>
                             구독 리스트
                         </div>
-                        <div style={{backgroundColor: 'lightgray', width: '420px', height: '800px', padding: '20px'}}>
+                        {/* <div style={{backgroundColor: 'lightgray', width: '420px', height: '800px', padding: '20px'}}>
                             <Trainings/>
-                        </div>
+                        </div> */}
                     </div>
                 </text>
             </div>

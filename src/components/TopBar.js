@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import '../css/TopBar.css';
-import {Link, withRouter} from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
 const TopBar = (props) => {
@@ -20,14 +20,18 @@ const TopBar = (props) => {
     };
 
     return (
-        <div className='Menu-wrapper'>
-            <Link to='/'>
-                <button className="Home">Home</button>
-            </Link>
-
-            <input className='input' value={searchString} onChange={onSearchStringChanges} onKeyPress={onKeyPress}/>
-            <button className="searchButton" onClick={search}>검색</button>
-            <button className="MyPage" onClick={loginOrMyPage}>{props.loginStatus ? "mypage" : "login"}</button>
+        <div>
+            <div className='TopBar-wrapper'>
+                <Link to='/'>
+                    <button className="Home">Home</button>
+                </Link>
+                <div className='Search'>
+                    <input className='input' value={searchString} onChange={onSearchStringChanges} onKeyPress={onKeyPress} />
+                    <button className="searchButton" onClick={search}>검색</button>
+                </div>
+                <button className="MyPage" onClick={loginOrMyPage}>{props.loginStatus ? "mypage" : "login"}</button>
+            </div>
+            <hr className='line'/>
         </div>
     )
 };
