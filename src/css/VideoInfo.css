@@ -4,16 +4,16 @@
     margin-left: 30px;
 }
 
-.VideoName {
-    max-width: 90%;
+.TrainingVideoName {
+    max-width: 80%;
     font-size: xx-large;
     overflow: hidden; 
     text-overflow: ellipsis;
 }
 
-.InputButton {
+/* .InputButton {
     margin-top: 4px;
-    float: right;
+
     width: 40px;
     height: 40px;
     color: #ffffff;
@@ -21,17 +21,30 @@
     border: none;
     border-radius: 0.5rem;
     margin-right: 40px;
+} */
+
+.Like {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.NameLike {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
  .LikeButton {
     top: 15px;
-    float: right;
     width: 22px;
     height: 22px;
     background: #ea2027;
     position: relative;
     transform: rotate(-135deg);
     border: none;
+    margin-right: 10px;
   }
   .LikeButton::before {
     content: "";
