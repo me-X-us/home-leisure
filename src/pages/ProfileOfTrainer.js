@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/ProfileOfUser.css';
 import SearchVideoList from '../components/SearchVideoList';
 import { Link } from 'react-router-dom';
-import { getUserId, getUserNickName, postHttp, API_BASE_URL } from '../utils/authHttpWrapper';
+import { getUserId, getUserNickName, postHttp, API_BASE_URL, putHttp } from '../utils/authHttpWrapper';
 
 const ProfileOfTrainer = (props) => {
     const [nickName, setNickName] = useState('');
@@ -20,21 +20,31 @@ const ProfileOfTrainer = (props) => {
             .then(userId => setImgUpload(API_BASE_URL + '/profile/' + userId + '/image'))
     }, [])
 
-    useEffect(() => {
+    // useEffect(() => {
 
-    }, [imgUpload])
+    // }, [nickName])
+
+    // useEffect(() => {
+
+    // }, [imgUpload])
 
     const onChangeNickName = e => setNewNickName(e.target.value);
 
     const changeNickName = async () => {
-        // let nick = await getUserNickName();      // 수정
         if (nickNameChange === false) {
             setNickNameChange(true);
         }
-        else if(nickNameChange === true && newNickName !== '') {
+        else if (nickNameChange === true && newNickName !== '') {
 
-            setNickName(newNickName);
-            setNickNameChange(false);
+            putHttp('/profile', {
+                nickName: newNickName
+            }).then(() => {
+                console.log(newNickName);
+                setNickName(newNickName);
+                setNickNameChange(false);
+            }).catch(error => {
+                console.log('error on component : ', error.response.data)
+            })
         }
     }
 
@@ -78,8 +88,8 @@ const ProfileOfTrainer = (props) => {
         <div>
             <div className='ProfileInfo'>
                 <div>
-                    <img onError={onImageError} className='UserProfile' src={imgChanging?imgPreview:imgUpload} alt={''}></img>
-                    {imgChanging ? <div><input className='ProfileImgInput' type='file' accept='image/jpg,impge/png,image/jpeg,image/gif' onChange={onImageChanged} alt={""} /></div>:<br/>}
+                    <img onError={onImageError} className='UserProfile' src={imgChanging ? imgPreview : imgUpload} alt={''}></img>
+                    {imgChanging ? <div><input className='ProfileImgInput' type='file' accept='image/jpg,impge/png,image/jpeg,image/gif' onChange={onImageChanged} alt={""} /></div> : <br />}
                     <button className='ProfileImgEditButton' onClick={submitImage}>프로필 편집</button>
                 </div>
                 <div className='NickNameInfo'>
