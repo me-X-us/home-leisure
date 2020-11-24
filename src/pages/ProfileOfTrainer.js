@@ -109,7 +109,7 @@ const ProfileOfTrainer = (props) => {
                     <Link to='/upload'>
                         <button className='UploadButton'>+</button>
                     </Link>
-                    <div className='MyUploadTriningListBackground'><SearchVideoList /></div>
+                    <div className='MyUploadTriningListBackground'>{/*<SearchVideoList />*/}</div>
                 </div>
 
                 {/* <text style={{marginLeft:'20px'}}>
