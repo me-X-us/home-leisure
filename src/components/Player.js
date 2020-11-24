@@ -13,14 +13,17 @@ const minPoseConfidence = 0;
 function Player() {
     const [curFrame, setCurFrame] = useState(-1);
     const [player, setPlayer] = useState();
-    const [playing, setPlaying] = useState(true);
+    const [playing, setPlaying] = useState(false);
+    const [score,setScore] = useState(0.0);
 
     async function estimate(curFrame, setState, a) {
         var frame = curFrame + delayFrame;
         if (a[0] != null && curFrame >= 0) {
             try {
                 if (mockData.frames[frame].keyPoint.length === 17 && a[0].keypoints.length === 17) {
-                    cosineSimilarity(mockData.frames[frame], a[0]);
+                    cosineSimilarity(mockData.frames[frame], a[0])
+                    .then(score=>setScore(score))
+                    console.log(score);
                 } else {
                     console.log("전신이 나와야합니다.");
                 }
@@ -55,7 +58,10 @@ function Player() {
                 height="100%"
                 onPlay={onPlay}
                 onPause={onPause}
+                progressInterval={1000/10}
                 onProgress={onProgress}
+                // eslint-disable-next-line
+                playing={playing}
             />
             <ReactPlayer
                 id="player"
@@ -78,6 +84,7 @@ function Player() {
                 minPoseConfidence={minPoseConfidence}
                 curFrame={curFrame}
             />
+            {score}
         </div>
     );
 }
