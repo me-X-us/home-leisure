@@ -17,7 +17,8 @@ export default function PoseNet({
   minPoseConfidence,
   minPartConfidence,
   width,
-  height
+  height,
+  curFrame
 }) {
   const [ctx, setCtx] = useState()
   const net = useLoadPoseNet(modelConfig)
@@ -35,8 +36,8 @@ export default function PoseNet({
   })
 
   useEffect(() => {
-    if (!net || !image || !ctx) return () => {}
-    if ([net, image].some(elem => elem instanceof Error)) return () => {}
+    if (!net || !image || !ctx) return () => { }
+    if ([net, image].some(elem => elem instanceof Error)) return () => { }
 
     let intervalId
     let requestId
@@ -47,15 +48,17 @@ export default function PoseNet({
 
     async function estimate() {
       try {
-        const poses = await net.estimatePoses(image, inferenceConfigRef.current)
-        const confidentPoses = getConfidentPoses(
-          poses,
-          minPoseConfidence,
-          minPartConfidence
-        )
         ctx.drawImage(image, 0, 0, width, height)
-        onEstimateRef.current(confidentPoses)
-        confidentPoses.forEach(({ keypoints }) => drawKeypoints(ctx, keypoints))
+        if (curFrame !== -1) {
+          const poses = await net.estimatePoses(image, inferenceConfigRef.current)
+          const confidentPoses = getConfidentPoses(
+            poses,
+            minPoseConfidence,
+            minPartConfidence
+          )
+          onEstimateRef.current(confidentPoses)
+        }
+        // confidentPoses.forEach(({ keypoints }) => drawKeypoints(ctx, keypoints))
       } catch (err) {
         cleanUp()
         setErrorMessage(err.message)
@@ -82,7 +85,8 @@ export default function PoseNet({
     height,
     frameRate,
     minPartConfidence,
-    minPoseConfidence
+    minPoseConfidence,
+    curFrame
   ])
 
   return (
@@ -167,7 +171,7 @@ PoseNet.defaultProps = {
   facingMode: "user",
   frameRate: undefined,
   input: undefined,
-  onEstimate: () => {},
+  onEstimate: () => { },
   inferenceConfig: {},
   modelConfig: {},
   minPoseConfidence: 0.1,
