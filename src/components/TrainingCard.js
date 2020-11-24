@@ -3,6 +3,7 @@ import '../css/TrainingCard.css' // 충돌날까봐 일단 파일 이름은 안�
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/ko';
+import { API_BASE_URL } from '../utils/authHttpWrapper';
 
 const TrainingCard = (props) => {
 
@@ -24,7 +25,7 @@ const TrainingCard = (props) => {
     return (
         <div className='Video'>
             <Link className='TrainingCardWrapper' to={"/training/" + props.training.trainingId}>
-                <img className='ThumbNail' src='https://tistory4.daumcdn.net/tistory/3028340/skin/images/bts_sreenshot.001.jpeg'
+                <img className='ThumbNail' src={API_BASE_URL + "/thumbnail/"+props.training.trainingId}
                     position="relative" opacity="0.5" width="300" height="190" alt=""/>
                 <font className='VideoName'>
                     {props.training.title}<br />

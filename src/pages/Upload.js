@@ -5,18 +5,18 @@ import '../css/Upload.css';
 const Upload = (props) => {
 
     const [uploadAvailable, setUploadAvailable] = useState(false);
-    //const [video, setVideo] = useState(null);
-    //const [thumbnail, setThumbnail] = useState(null);
+    // const [video, setVideo] = useState('');
+    const [thumbnail, setThumbnail] = useState('');
     const [videoName, setVideoName] = useState("");
     const [videoExplain, setVideoExplain] = useState("");
 
     useEffect(() => {
-        if (videoName === "" || videoExplain === "") {
+        if (thumbnail === "" || videoName === "" || videoExplain === "") {
             setUploadAvailable(false);
         } else {
             setUploadAvailable(true);
         }
-    }, [videoName, videoExplain]);
+    }, [thumbnail, videoName, videoExplain]);
 
     // 영상(1)과 썸네일(2) 업로드 추후에 진행
 
@@ -28,6 +28,12 @@ const Upload = (props) => {
         let uploadVideo = await postHttp('/trainings', {
             title: videoName,
             body: videoExplain
+        }).then(response => {
+            let tID = response.data._links.self.href.slice(-1);
+            const fd = new FormData();
+            // console.log(fd)
+            fd.append('image', thumbnail)
+            postHttp('/thumbnail/'+tID, fd)
         }).catch(error => {
             console.log('error on component : ', error.response.data)
         })
@@ -36,13 +42,15 @@ const Upload = (props) => {
             props.history.push('/mypage')
         }
     }
+
+    const UploadThumbnail = (e) => {
+        setThumbnail(e.target.files[0])
+    }
     
     return (
         <div className='UploadWrapper'>
-            <button className='VideoUpload'>업로드할 영상을 선택해주세요.</button>
-            <button className='ThumbNailUpload'>
-                대표사진을 선택해주세요.
-                </button>
+            <input className='VideoUpload' type='file' accept='.mp4'/>  {/** 업로드할 영상을 선택해주세요 */}
+            <input className='ThumbNailUpload' type='file' accept='image/jpg,impge/png,image/jpeg,image/gif' onChange={UploadThumbnail}/>   {/** 대표사진을 선택해주세요. */}
             <br />
             <input className='UploadTitle' placeholder='영상 제목 입력' onChange={changeVideoName} />
             <br />
