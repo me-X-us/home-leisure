@@ -9,6 +9,11 @@ const fLen = mockData.frames.length;
 const delayFrame = -20;
 const frameRate = 30;
 const minPoseConfidence = 0;
+// var time = Date.now();
+
+// function test(a){
+//     console.log(time);
+// }
 
 function Player() {
     const [curFrame, setCurFrame] = useState(-1);

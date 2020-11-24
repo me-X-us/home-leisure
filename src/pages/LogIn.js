@@ -42,7 +42,7 @@ const LogIn = (props) => {
     }
 
     return (
-        <div style={{ textAlign: "center" }}>
+        <div className='LoginWrapper'>
             <Link to='/'>
                 <button className='MainButton'>
                 </button>

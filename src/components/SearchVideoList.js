@@ -1,43 +1,43 @@
-import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/SearchVideoList.css';
 
 function SearchVideoList() {
     const [videoInfo, setVideoInfo] = useState({
         videoName: "영상 제목",
-        chanelName: "채널이름",
+        channelName: "채널이름",
         view: "날짜",
         content: "영상 설명"
     });
 
-    useEffect(()=>{
+    useEffect(() => {
         setVideoInfo({
             videoName: "영상 제목",
-            chanelName: "채널이름",
+            channelName: "채널이름",
             view: "날짜",
             content: "영상 설명"
         });
-    },[])
+    }, [])
 
 
     return (
         <div>
-            <Link to='/training' style={{textDecoration: 'none'}}>
-                <div className='SearchVideo'>
+            <Link className='SearchVideo' to='/training'>
+                <div>
                     {/* 나중에 List로 구현 */}
 
                     <img className="VideoImage"
-                         src='https://tistory4.daumcdn.net/tistory/3028340/skin/images/bts_sreenshot.001.jpeg'
-                         style={{verticalAlign: 'top'}} alt=''/>
+                        src='https://tistory4.daumcdn.net/tistory/3028340/skin/images/bts_sreenshot.001.jpeg'
+                        alt='' />
                     <text>
                         <div className='VideoInfo'>
-                            <div className='SearchVideoName' style={{width: "800px", maxHeight: "80px"}}>
+                            <div className='SearchVideoName'>
                                 {videoInfo.videoName}
                             </div>
-                            <div className='SearchChannelName' style={{width: "800px", height: "21px"}}>
+                            <div className='SearchChannelName'>
                                 {videoInfo.channelName}
                             </div>
-                            <div className='SearchVideoInfo' style={{width: "800px"}}>
+                            <div className='SearchVideoInfo'>
                                 <font>
                                     {videoInfo.view}
                                 </font>
@@ -46,7 +46,7 @@ function SearchVideoList() {
                                     {videoInfo.date}
                                 </font>
                             </div>
-                            <div className='SearchVideoContent' style={{width: "800px", height: "100px"}}>
+                            <div className='SearchVideoContent'>
                                 {videoInfo.content}
                             </div>
                         </div>

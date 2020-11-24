@@ -6,21 +6,19 @@ import Trainings from "../components/Trainings";
 const Main = (props) => {
 
     const [trainings, setTrainings] = useState([]);
-    const [pageInfo, setPageInfo] = useState();
 
     useEffect(() => {
-        getHttp("/trainings").then(r => {
-            setPageInfo(r.data.page);
-            if (r.data._embedded !== undefined)
-                setTrainings(r.data._embedded.trainingList)
-        }).catch(error => {
-            alert(error.response.data.message)
-        });
+        getHttp("/trainings")
+            .then(r => {
+                if (r.data._embedded !== undefined)
+                    setTrainings(r.data._embedded.trainingList)
+            }).catch(error => {
+                alert(error.response.data.message)
+            });
     }, []);
-    console.log(pageInfo)
 
     return (
-        <div style={{ margin: '30px' }}>
+        <div className='Trainings'>
             <Trainings trainings={trainings} />
         </div>
     )

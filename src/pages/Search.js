@@ -1,12 +1,13 @@
 import React from 'react';
 import SearchVideoList from '../components/SearchVideoList';
 import Filter from '../components/Filter';
+import '../css/Search.css';
 
 function Search() {
     return (
-        <div style={{ marginLeft: '16%' }}>
+        <div className='SearchWrapper'>
             <Filter />
-            <div style={{marginTop:'50px'}}>
+            <div className='SearchVideoList'>
                 <SearchVideoList />
             </div>
         </div>

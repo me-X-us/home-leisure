@@ -94,25 +94,23 @@ const SignUp = (props) => {
     };
 
     return (
-        <div style={{ textAlign: "center" }}>
+        <div className='SignUpWrapper'>
             <Link to='/'>
                 <button className='MainButton'>
                 </button>
             </Link>
             <div>
-                <input className='TextInput' style={{ width: '400px' }} placeholder='닉네임' value={nick} onChange={onChangeNick} />{chkNick}
-                <button className='DuplicateButton' onClick={checkNick}> 닉네임<br/>중복확인</button>
+                <input className='NickIdInput' placeholder='닉네임' value={nick} onChange={onChangeNick} />{chkNick}
+                <button className='DuplicateButton' onClick={checkNick}> 닉네임<br />중복확인</button>
                 <div>
-                    <input className='TextInput' style={{width:'400px'}} placeholder='아이디' value={id} onChange={onChangeId} />{chkId}
-                    <button className='DuplicateButton' onClick={checkId}> ID<br/>중복확인</button>
+                    <input className='NickIdInput' placeholder='아이디' value={id} onChange={onChangeId} />{chkId}
+                    <button className='DuplicateButton' onClick={checkId}> ID<br />중복확인</button>
                 </div>
                 <input className='TextInput' placeholder='비밀번호' value={pw} type="password" onChange={onChangePw} />
                 <div>
-                    <input className='TextInput' style={{width:'500px'}} placeholder='비밀번호 확인' value={rePw} type="password"
-                        onChange={onChangeRepw} />{chkPw}
+                    <input className='PwEmailInput' placeholder='비밀번호 확인' value={rePw} type="password" onChange={onChangeRepw} />{chkPw}
                 </div>
-                <input className='TextInput' style={{width:'500px'}} placeholder='이메일' type='email' value={email}
-                    onChange={onChangeEmail} />{chkEmail}
+                <input className='PwEmailInput' placeholder='이메일' type='email' value={email} onChange={onChangeEmail} />{chkEmail}
                 <div>
                     <button className='SignInAndLogInButton' onClick={signUp}
                         disabled={chkPw !== '✅' || chkEmail !== '✅' || chkId !== '✅' || chkNick !== '✅'}>

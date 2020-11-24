@@ -1,4 +1,8 @@
-.IDInput {
+.SignUpWrapper {
+    text-align: center;
+}
+
+.NickIdInput {
     width: 400px;
     resize: none;
     font-size: xx-large;
@@ -20,6 +24,16 @@
     margin-left: 20px;
     font-size: large;
     color: white;
+}
+
+.PwEmailInput {
+    width: 500px;
+    resize: none;
+    font-size: xx-large;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin: 20px;
 }
 
 .SignInAndLogInButton {
