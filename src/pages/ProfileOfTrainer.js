@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../css/ProfileOfUser.css';
-import SearchVideoList from '../components/SearchVideoList';
+// import SearchVideoList from '../components/SearchVideoList';
 import { Link } from 'react-router-dom';
 import { getUserId, getUserNickName, postHttp, API_BASE_URL, putHttp } from '../utils/authHttpWrapper';
 

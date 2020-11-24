@@ -13,20 +13,20 @@ const Search = (props) => {
         console.log(searchStr)
         getHttp('/trainings?search=' + searchStr)
             .then(r => {
-                if(r.data._embedded !== undefined)
+                if (r.data._embedded !== undefined)
                     setSearchs(r.data._embedded.trainingList)
-                    console.log(searchs)
+                console.log(searchs)
             }).catch(e => {
                 console.log(e.response.data.message)
             });
-
+        // eslint-disable-next-line
     }, [props.location.search])
 
     return (
         <div className='SearchWrapper'>
             <Filter />
             <div className='SearchVideoList'>
-                <SearchVideoList searchs={searchs}/>
+                <SearchVideoList searchs={searchs} />
             </div>
         </div>
     );

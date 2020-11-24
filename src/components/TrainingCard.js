@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/TrainingCard.css' // 충돌날까봐 일단 파일 이름은 안바꿧음!!
+import '../css/TrainingCard.css';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/ko';
