@@ -36,8 +36,6 @@ const Training = (props) => {
     return (
         <div>
             <Player/>
-            <div style={{height: 1000, backgroundColor: 'black'}}>
-            </div>
             <VideoInfo trainingInfo={trainingInfo}/>
             <MyComment trainingId={props.match.params.trainingId} refresh={refreshComments}/>
             {comments.map((comment,index)=><Comment key={index} commentId={props.match.params.commentId} comment={comment} refresh={refreshComments}/>)}

@@ -1,19 +1,20 @@
-.player {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  opacity: 0.5;
-  z-index: 1;
+#player{
+  float: left;
+  z-index: 9999;
 }
-
+.shape{
+  opacity: 0.2;
+}
 .cam {
-  width:100%;
-   transform:rotate(0deg);
-  -moz-transform: scaleX(-1); 
-  -o-transform: scaleX(-1); 
-  -webkit-transform: scaleX(-1); 
-   transform: scaleX(-1);   
-  filter: FlipH;
+  position: absolute;
+  top: 63px;
+  left: 50%;
+  z-index: 100;
+  width:50%;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+   transform: scaleX(-1);
+  filter: flipH();
   -ms-filter: "FlipH";
-  z-index: 2;
 }

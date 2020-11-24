@@ -1,9 +1,9 @@
-import React, { useRef, useState, useEffect } from "react"
+import React, {useEffect, useRef, useState} from "react"
 import PropTypes from "prop-types"
 import Loading from "./Loading"
 import useInputImage from "../hooks/useInputImage"
 import useLoadPoseNet from "../hooks/useLoadPoseNet"
-import { drawKeypoints, getConfidentPoses } from "../util"
+import {getConfidentPoses} from "../util"
 
 export default function PoseNet({
   style,
