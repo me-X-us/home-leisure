@@ -10,7 +10,6 @@ const fLen = mockData.frames.length;
 const delayFrame = -20;
 const frameRate = 30;
 const minPoseConfidence = 0;
-
 async function estimate(curFrame, setState, a) {
     var frame = curFrame + delayFrame;
     if (a[0] != null && curFrame >= 0) {
