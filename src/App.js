@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import TopBar from './components/TopBar'
 import Main from './pages/Main'
-import MyPage from './pages/ProfileOfTrainer'
+import MyPage from './pages/Profile'
 import Training from './pages/Training';
 import Search from './pages/Search';
 import SignUp from './pages/SignUp';
