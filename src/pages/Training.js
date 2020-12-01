@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MyComment from '../components/MyComment.js'
 import VideoInfo from '../components/VideoInfo.js'
-import { getHttp } from "../utils/authHttpWrapper";
+import { getHttp, getUserId } from "../utils/authHttpWrapper";
 import Comment from "../components/Comment";
 import { now } from 'moment';
 import Player from '../components/Player'
@@ -15,9 +15,12 @@ const Training = (props) => {
         createdDate: new Date(now)
     });
     const [comments, setComments] = useState([]);
+    const [userId, setUserId] = useState('');
 
     useEffect(() => {
         getTrainingInfo();
+        getUserId()
+            .then(r => setUserId(r));
         // eslint-disable-next-line
     }, [props.match.params.trainingId]);
 
@@ -43,8 +46,8 @@ const Training = (props) => {
         <div>
             <Player/>
             <VideoInfo trainingInfo={trainingInfo} trainingId={props.match.params.trainingId} getTrainingInfo={getTrainingInfo} />
-            <MyComment trainingId={props.match.params.trainingId} refresh={refreshComments} />
-            {comments.map((comment, index) => <Comment key={index} commentId={props.match.params.commentId} comment={comment} refresh={refreshComments} />)}
+            <MyComment trainingId={props.match.params.trainingId} userId={userId} refresh={refreshComments} />
+            {comments.map((comment, index) => <Comment key={index} commentId={props.match.params.commentId} comment={comment} commenterId={comment.commenterId} modifiedDate={comment.modifiedDate} refresh={refreshComments} />)}
         </div>
     );
 };

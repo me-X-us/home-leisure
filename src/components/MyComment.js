@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/MyComment.css';
-import { postHttp } from '../utils/authHttpWrapper'
+import { postHttp, API_BASE_URL } from '../utils/authHttpWrapper'
 
 const MyComment = (props) => {
     const [commentBody, setCommentBody] = useState('');
+    const defaultImg = "https://avatars1.githubusercontent.com/u/19163372?s=60&v=4";
+    const [myImg, setMyImg] = useState(API_BASE_URL+'/profile/'+props.userId+'/image')
 
     const onChangeCommentBody = e => setCommentBody(e.target.value);
+
+    useEffect(() => {
+        setMyImg(API_BASE_URL+'/profile/'+props.userId+'/image')
+    }, [props.userId])
 
     const inputComment = async () => {
         if (commentBody !== '') {
@@ -26,6 +32,10 @@ const MyComment = (props) => {
         props.refresh()
     };
 
+    const onImageError = () => {
+        setMyImg(defaultImg)
+    }
+
     return (
         <div>
             <div className='Comment'>
@@ -34,8 +44,8 @@ const MyComment = (props) => {
                 </text>
             </div>
             <div className='MyComment'>
-                <img className='MyProfile' src="https://avatars1.githubusercontent.com/u/19163372?s=60&v=4" alt="" />
-                <textarea className='Input' placeholder="댓글 입력" value={commentBody} onChange={onChangeCommentBody} />
+                <img className='MyProfile' src={myImg} onError={onImageError} alt="" />
+                <textarea className='Input' placeholder="댓글입력" value={commentBody} onChange={onChangeCommentBody} />
                 <button className='CommentButton' onClick={inputComment}>
                     입력
                 </button>
