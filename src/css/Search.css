@@ -1,7 +1,10 @@
 .SearchWrapper {
-    margin-left: 16%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .SearchVideoList {
+    width: 60%;
     margin-top: 50px;
 }
