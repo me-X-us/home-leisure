@@ -1,0 +1,16 @@
+.Subscribe {
+    margin-left: 2%;
+}
+
+.SubscribeImg {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.SubscribeName {
+    vertical-align: top;
+    font-size: xx-large;
+    margin-left: 1.5%;
+}
