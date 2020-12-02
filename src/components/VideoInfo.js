@@ -25,31 +25,20 @@ const VideoInfo = (props) => {
         if (props.trainingInfo.like === false) {
             postHttp('/trainings/' + props.trainingId + '/like', {})
                 .then(() => props.getTrainingInfo())
-                .then(() => alert('좋아요 되었습니다.'))
         } else {
             deleteHttp('/trainings/' + props.trainingId + '/like')
                 .then(() => props.getTrainingInfo())
-                .then(() => alert('좋아요 취소되었습니다.'))
         }
     }
 
     const ChangeSubscribe = async () => {
-        let user
-        await getUserNickName()
-            .then(r => { user = r })
-            .then(async() => {
                 if (props.trainingInfo.subscribe === false) {
-                    await postHttp('/trainer/' + user, {})
+                    await postHttp('/trainer/' + props.trainingInfo.trainerId, {})
                         .then(async () => await props.getTrainingInfo())
-                        .then(() => alert('구독 되었습니다.'))
                 } else {
-                    await deleteHttp('/trainer/' + user)
+                    await deleteHttp('/trainer/' + props.trainingInfo.trainerId)
                         .then(async () => await props.getTrainingInfo())
-                        .then(() => alert('구독 취소되었습니다.'))
                 }
-            }
-            )
-
     }
 
     const onImageError = () => {

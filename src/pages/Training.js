@@ -44,7 +44,7 @@ const Training = (props) => {
 
     return (
         <div>
-            <Player/>
+            {/* <Player/> */}
             <VideoInfo trainingInfo={trainingInfo} trainingId={props.match.params.trainingId} getTrainingInfo={getTrainingInfo} />
             <MyComment trainingId={props.match.params.trainingId} userId={userId} refresh={refreshComments} />
             {comments.map((comment, index) => <Comment key={index} commentId={props.match.params.commentId} comment={comment} commenterId={comment.commenterId} modifiedDate={comment.modifiedDate} refresh={refreshComments} />)}
