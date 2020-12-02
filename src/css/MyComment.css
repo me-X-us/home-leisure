@@ -6,6 +6,8 @@
 .MyComment {
     margin-left: 30px;
     margin-right: 40px;
+    display: flex;
+    flex-direction: row;
 }
 
 .MyProfile {
@@ -16,7 +18,7 @@
 }
 
 .Input {
-    width: 90%;
+    width: 85%;
     vertical-align: top;
     border-top: none;
     border-left: none;

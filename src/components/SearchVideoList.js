@@ -3,7 +3,7 @@ import SearchVideo from './SearchVideo'
 
 const SearchVideoList = (props) => {
     return (
-        <div>
+        <div className='SearchVideoList'>
             {props.searchs.map(search => <SearchVideo key={search.trainingId} training={search} />)}
         </div>
     );

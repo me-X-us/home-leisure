@@ -37,7 +37,7 @@ const TrainingCard = (props) => {
                     {"조회수 " + props.training.views + "회"}
                 </font>
                 &nbsp;-&nbsp;
-                    <font className='time'>
+                <font className='time'>
                     {setDate(props.training.modifiedDate)}
                 </font>
             </Link>

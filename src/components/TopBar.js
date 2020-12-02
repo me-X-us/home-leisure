@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../css/TopBar.css';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 const TopBar = (props) => {
@@ -8,6 +8,7 @@ const TopBar = (props) => {
 
     const onSearchStringChanges = e => setSearchString(e.target.value);
 
+    const home = () => props.history.push('/');
     const search = () => props.history.push('/search?title=' + searchString);
     const loginOrMyPage = () => {
         let link = props.loginStatus ? "/mypage" : "/login";
@@ -22,16 +23,14 @@ const TopBar = (props) => {
     return (
         <div>
             <div className='TopBar-wrapper'>
-                <Link to='/'>
-                    <button className="Home">Home</button>
-                </Link>
+                <button className="Home" onClick={home}>Home</button>
                 <div className='Search'>
                     <input className='input' value={searchString} onChange={onSearchStringChanges} onKeyPress={onKeyPress} />
                     <button className="searchButton" onClick={search}>검색</button>
                 </div>
                 <button className="MyPage" onClick={loginOrMyPage}>{props.loginStatus ? "mypage" : "login"}</button>
             </div>
-            <hr className='line'/>
+            <hr className='line' />
         </div>
     )
 };

@@ -31,20 +31,18 @@ const SearchVideo = (props) => {
                     <img className="SearchVideoImage"
                         src={API_BASE_URL + "/thumbnail/" + props.training.trainingId}
                         alt='' />
-                    <div className='SearchVideoInfo'>
+                    <div className='SearchVideoInfos'>
                         <font className='SearchVideoName'>
                             {props.training.title}<br />
                         </font>
                         <font className='SearchChannelName'>
                             {props.training.trainer}<br />
                         </font>
-                        <font className='SearchVideoInfo'>
-                            {"조회수 " + props.training.views + "회"}
-                        </font>
-                        &nbsp;-&nbsp;
-                        <font className='SrarchVideoInfo'>
-                            {setDate(props.training.modifiedDate)}
-                        </font>
+                        <div className='InfoDate'>
+                            <font className='SearchVideoInfo'>{"조회수 " + props.training.views + "회"}</font>
+                            &nbsp;-&nbsp;
+                            <font className='SrarchVideoInfo'>{setDate(props.training.modifiedDate)}</font>
+                        </div>
                         <font className='SearchVideoBody'>
                             영상설명
                         </font>

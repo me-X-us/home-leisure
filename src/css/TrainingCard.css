@@ -1,5 +1,6 @@
 .Video {
-    width: 400px;
+    margin: 20px;
+    margin-bottom: 20px;
 }
 
 .TrainingCardWrapper {
@@ -8,6 +9,7 @@
 
 .ThumbNail{
     border-radius: 1rem;
+    border: 1px solid lightgray;
 }
 
 .VideoName {
