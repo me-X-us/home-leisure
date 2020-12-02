@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../css/VideoInfo.css'
-import { deleteHttp, postHttp, getUserNickName, API_BASE_URL } from '../utils/authHttpWrapper';
+import { deleteHttp, postHttp, API_BASE_URL } from '../utils/authHttpWrapper';
 
 const VideoInfo = (props) => {
     const [like, setLike] = useState(props.trainingInfo.likes)
