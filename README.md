@@ -35,11 +35,16 @@ available, see the [tags on this repository](https://github.com/PurpleBooth/a-go
 ## Authors
 
   - [pangwoon](https://github.com/Namkwangwoon) - **KwangWoon Nam**
+  - [always0ne](https://github.com/Always0ne) - **SangIl Hwang** - <si8363@soongsil.ac.kr>
+  - [naemoo](https://github.com/naemoo) - **Hyeonu Nam**
+
 
 See also the list of [contributors](https://github.com/always0ne/readmeTemplate/contributors)
 who participated in this project.
 
 ## Used or Referenced Projects
+ - [spa-github-pages](https://github.com/rafgraph/spa-github-pages) - **MIT** 
+    - Hosting SPA on Github Pages.
 
 ## License
 

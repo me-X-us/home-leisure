@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import MyComment from '../components/MyComment.js'
 import VideoInfo from '../components/VideoInfo.js'
 import { getHttp, getUserId } from "../utils/authHttpWrapper";
 import Comment from "../components/Comment";
-import { now } from 'moment';
+import {now} from 'moment';
 import Player from '../components/Player'
 
 const Training = (props) => {
@@ -30,7 +30,7 @@ const Training = (props) => {
                 if (response.data.page.totalElements !== 0)
                     setComments(response.data._embedded.commentList)
             })
-    }
+    };
 
     const getTrainingInfo = async () => {
         getHttp("/trainings/" + props.match.params.trainingId)
@@ -44,7 +44,7 @@ const Training = (props) => {
 
     return (
         <div>
-            <Player/>
+            <Player trainingId={props.match.params.trainingId}/>
             <VideoInfo trainingInfo={trainingInfo} trainingId={props.match.params.trainingId} getTrainingInfo={getTrainingInfo} />
             <MyComment trainingId={props.match.params.trainingId} userId={userId} refresh={refreshComments} />
             {comments.map((comment, index) => <Comment key={index} commentId={props.match.params.commentId} comment={comment} commenterId={comment.commenterId} modifiedDate={comment.modifiedDate} refresh={refreshComments} />)}
