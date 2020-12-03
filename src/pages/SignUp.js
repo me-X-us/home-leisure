@@ -97,7 +97,7 @@ const SignUp = (props) => {
     return (
         <div className='SignUpWrapper'>
             <Link to='/'>
-                <img className='MainButton' src={logo} />
+                <img className='MainButton' src={logo} alt={''} />
             </Link>
             <div>
                 <input className='NickIdInput' placeholder='닉네임' value={nick} onChange={onChangeNick} />{chkNick}

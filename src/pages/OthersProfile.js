@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Profile.css';
 import Trainings from '../components/Trainings';
-import Subscribes from '../components/Subscribes';
-import { Link } from 'react-router-dom';
-import { getUserId, getUserNickName, API_BASE_URL, getHttp } from '../utils/authHttpWrapper';
+import { API_BASE_URL, getHttp } from '../utils/authHttpWrapper';
 
 
 const OthersProfile = (props) => {
-    const [nickName, setNickName] = useState(props.nickName);
     const imgDefault = process.env.PUBLIC_URL + '/Gray.png';
     const [profileImg, setProfileImg] = useState(props.profileImg);
     const [myTrainings, setMyTrainings] = useState([]);
-    const [myLikeTrainings, setMyLikeTrainings] = useState([]);
-    const [mySubscribes, setMySubscribes] = useState([]);
 
     // eslint-disable-next-line
     useEffect(() => {

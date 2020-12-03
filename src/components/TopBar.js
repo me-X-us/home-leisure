@@ -24,7 +24,7 @@ const TopBar = (props) => {
     return (
         <div>
             <div className='TopBar-wrapper'>
-                <img className="Home" src = {logo} onClick={home} />
+                <img className="Home" src = {logo} onClick={home} alt={''} />
                 <div className='Search'>
                     <input className='input' value={searchString} onChange={onSearchStringChanges} onKeyPress={onKeyPress} />
                     <button className="searchButton" onClick={search}>검색</button>

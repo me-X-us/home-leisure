@@ -45,7 +45,7 @@ const LogIn = (props) => {
     return (
         <div className='LoginWrapper'>
             <Link to='/'>
-                <img className='MainButton' src={logo} />
+                <img className='MainButton' src={logo} alt={''} />
             </Link>
             <div>
                 <input className='TextInput' value={id} placeholder='아이디' onChange={onChangeId} onKeyPress={onKeyPress} />
