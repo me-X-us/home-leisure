@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { getUserId, getUserNickName, postHttp, API_BASE_URL, putHttp, getHttp } from '../utils/authHttpWrapper';
 
 
-const ProfileOfTrainer = (props) => {
+const Profile = (props) => {
     const [nickName, setNickName] = useState('?');
     const [nickNameChange, setNickNameChange] = useState(false);
     const [newNickName, setNewNickName] = useState('');
-    const imgDefault = 'https://avatars1.githubusercontent.com/u/50524321?s=460&u=7621eb647ffc21484a8ddb3914275574063c08cb&v=4';
+    const imgDefault = process.env.PUBLIC_URL + '/Gray.png';
     const [imgPreview, setImagePreview] = useState('');
     const [imgUpload, setImgUpload] = useState('');
     const [imgChanging, setImageChanging] = useState(false);
@@ -47,7 +47,6 @@ const ProfileOfTrainer = (props) => {
                     })
                 await getHttp("/subscribes")
                     .then(r => {
-                        console.log(r.data)
                         setMySubscribes(r.data);
                     }).catch(error => {
                         console.log(error.response.data.message)
@@ -164,4 +163,4 @@ const ProfileOfTrainer = (props) => {
     );
 }
 
-export default ProfileOfTrainer;
+export default Profile;

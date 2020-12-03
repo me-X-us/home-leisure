@@ -11,6 +11,7 @@
     border-radius: 1rem;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 .DuplicateButton {
@@ -21,9 +22,10 @@
     border: none;
     border-radius: 0.8rem;
     margin-bottom: 15px;
-    margin-left: 20px;
+    margin-left: 10px;
     font-size: large;
     color: white;
+    background-color: mediumpurple;
 }
 
 .PwEmailInput {
@@ -45,4 +47,5 @@
     border-radius: 1rem;
     font-size: x-large;
     color: white;
+    background-color: mediumpurple;
 }

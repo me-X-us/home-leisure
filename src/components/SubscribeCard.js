@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { API_BASE_URL } from '../utils/authHttpWrapper';
 import '../css/SubscribeCard.css';
+import { Link } from 'react-router-dom';
 
 const SubscribeCard = (props) => {
 
@@ -8,7 +9,6 @@ const SubscribeCard = (props) => {
     const [subscribeImage, setSubscribeImage] = useState('');
 
     useEffect(() => {
-        console.log(props.subscribe.trainerId)
         setSubscribeImage(API_BASE_URL + '/profile/' + props.subscribe.trainerId + '/image')
         // eslint-disable-next-line
     }, [])
@@ -18,10 +18,10 @@ const SubscribeCard = (props) => {
     }
 
     return (
-        <div className='Subscribe'>
+        <Link className='Subscribe' to={"/page/" + props.subscribe.trainerName}>
             <img className='SubscribeImg' src={subscribeImage} onError={onImageError} alt={''}/>
             <text className='SubscribeName'>{props.subscribe.trainerName}</text>
-        </div>
+        </Link>
     );
 };
 

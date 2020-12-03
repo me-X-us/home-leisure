@@ -2,6 +2,8 @@
     margin-left: 2%;
     margin-top: 5px;
     margin-bottom: 5px;
+    text-decoration: none;
+    color: black;
 }
 
 .SubscribeImg {
@@ -13,6 +15,8 @@
 
 .SubscribeName {
     vertical-align: top;
+    color: black;
     font-size: xx-large;
+
     margin-left: 1.5%;
 }

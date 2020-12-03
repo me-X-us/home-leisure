@@ -51,6 +51,7 @@
     width: 320px;
     height: 100px;
     color: white;
+    background-color: mediumpurple;
     font-size: xx-large;
     border: none;
     border-radius: 1.5rem;
@@ -75,7 +76,7 @@
     float: right;
     width: 42px;
     height: 42px;                            
-    background: lightgray;
+    background-color: mediumpurple;
     padding-top: 0px;
     border: none;
     border-radius: 0.7rem;

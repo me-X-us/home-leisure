@@ -5,14 +5,15 @@
 .SearchVideoWrapper {
     display: flex;
     width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
     /* justify-content: center; */
 }
 
 .SearchVideoInfos {
-    width: 200px;
+    width: 400px;
     color: black;
     padding-left: 20px;
-    margin-bottom: 100px;
 }
 
 .SearchVideoImage {

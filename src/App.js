@@ -9,6 +9,7 @@ import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 import {checkLoginStatus} from "./utils/authHttpWrapper";
 import Upload from './pages/Upload';
+import OthersProfile from './pages/OthersProfile';
 
 function App() {
     const [loginStatus, setLoginStatus] = useState(false);
@@ -34,6 +35,7 @@ function App() {
                 <Route path='/login' render={() => <LogIn setIsLogin={setLoginStatus}/>}/>
                 <Route path='/signup' render={() => <SignUp setIsLogin={setLoginStatus}/>}/>
                 <Route path='/upload' component={Upload}/>
+                <Route path='/page/:nickName' component={OthersProfile}/>
             </Switch>
         </Router>
     );

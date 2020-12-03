@@ -35,16 +35,16 @@ const SearchVideo = (props) => {
                         <font className='SearchVideoName'>
                             {props.training.title}<br />
                         </font>
-                        <font className='SearchChannelName'>
-                            {props.training.trainer}<br />
-                        </font>
+                        <Link className='Page' to={"/page/" + props.training.trainer}>
+                            <font className='SearchChannelName'>{props.training.trainer}<br /></font>
+                        </Link>
                         <div className='InfoDate'>
                             <font className='SearchVideoInfo'>{"조회수 " + props.training.views + "회"}</font>
                             &nbsp;-&nbsp;
                             <font className='SrarchVideoInfo'>{setDate(props.training.modifiedDate)}</font>
                         </div>
                         <font className='SearchVideoBody'>
-                            영상설명
+                            {props.training.body}
                         </font>
                     </div>
                 </div>

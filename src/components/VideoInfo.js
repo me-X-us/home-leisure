@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import '../css/VideoInfo.css'
 import { deleteHttp, postHttp, API_BASE_URL } from '../utils/authHttpWrapper';
+import { Link } from 'react-router-dom'
 
 const VideoInfo = (props) => {
     const [like, setLike] = useState(props.trainingInfo.likes)
     const [subscribe, setSubscribe] = useState(props.trainingInfo.subscribe)
-    const imgDefault = 'https://avatars2.githubusercontent.com/u/18184139?s=64&v=4';
-    const [trainerImg, setTrainerImg] = useState(API_BASE_URL+'/profile/'+props.trainingInfo.trainerId+'/image')
+    const imgDefault = process.env.PUBLIC_URL + '/Gray.png'
+    const [trainerImg, setTrainerImg] = useState(API_BASE_URL + '/profile/' + props.trainingInfo.trainerId + '/image')
 
     useEffect(() => {
-        setTrainerImg(API_BASE_URL+'/profile/'+props.trainingInfo.trainerId+'/image')
+        setTrainerImg(API_BASE_URL + '/profile/' + props.trainingInfo.trainerId + '/image')
     }, [props.trainingInfo.trainerId])
 
     useEffect(() => {
@@ -32,13 +33,13 @@ const VideoInfo = (props) => {
     }
 
     const ChangeSubscribe = async () => {
-                if (props.trainingInfo.subscribe === false) {
-                    await postHttp('/trainer/' + props.trainingInfo.trainerId, {})
-                        .then(async () => await props.getTrainingInfo())
-                } else {
-                    await deleteHttp('/trainer/' + props.trainingInfo.trainerId)
-                        .then(async () => await props.getTrainingInfo())
-                }
+        if (props.trainingInfo.subscribe === false) {
+            await postHttp('/trainer/' + props.trainingInfo.trainerId, {})
+                .then(async () => await props.getTrainingInfo())
+        } else {
+            await deleteHttp('/trainer/' + props.trainingInfo.trainerId)
+                .then(async () => await props.getTrainingInfo())
+        }
     }
 
     const onImageError = () => {
@@ -60,8 +61,10 @@ const VideoInfo = (props) => {
                 <text className='Date'>{props.trainingInfo.createdDate.toString().slice(0, 10)}</text>
             </div>
             <div className='ChannelInfo'>
-                <img className='Profile' src={trainerImg} onError={onImageError} alt="" />
-                <text className='ChannelName'>{props.trainingInfo.trainer}</text>
+                <Link className='Page' to={"/page/" + props.trainingInfo.trainer}>
+                    <img className='Profile' src={trainerImg} onError={onImageError} alt="" />
+                    <text className='ChannelName'>{props.trainingInfo.trainer}</text>
+                </Link>
                 <button className='SubscribeButton' onClick={ChangeSubscribe}>{subscribe ? '구독중' : '구독'}</button>
             </div>
             <div className='VideoExplain'>

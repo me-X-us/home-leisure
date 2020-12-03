@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 const TopBar = (props) => {
     const [searchString, setSearchString] = useState("");
+    const logo = process.env.PUBLIC_URL + '/logo.png';
 
     const onSearchStringChanges = e => setSearchString(e.target.value);
 
@@ -23,7 +24,7 @@ const TopBar = (props) => {
     return (
         <div>
             <div className='TopBar-wrapper'>
-                <button className="Home" onClick={home}>Home</button>
+                <img className="Home" src = {logo} onClick={home} />
                 <div className='Search'>
                     <input className='input' value={searchString} onChange={onSearchStringChanges} onKeyPress={onKeyPress} />
                     <button className="searchButton" onClick={search}>검색</button>

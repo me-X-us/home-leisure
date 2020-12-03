@@ -25,14 +25,14 @@ const TrainingCard = (props) => {
     return (
         <div className='Video'>
             <Link className='TrainingCardWrapper' to={"/training/" + props.training.trainingId}>
-                <img className='ThumbNail' src={API_BASE_URL + "/thumbnail/"+props.training.trainingId}
-                    position="relative" opacity="0.5" width="300" height="190" alt=""/>
+                <img className='ThumbNail' src={API_BASE_URL + "/thumbnail/" + props.training.trainingId}
+                    position="relative" opacity="0.5" width="300" height="190" alt="" />
                 <font className='VideoName'>
                     {props.training.title}<br />
                 </font>
-                <font className='Channel'>
-                    {props.training.trainer}<br />
-                </font>
+                <Link className='Page' to={"/page/" + props.training.trainer}>
+                    <font className='Channel'>{props.training.trainer}<br /></font>
+                </Link>
                 <font className='Play'>
                     {"조회수 " + props.training.views + "회"}
                 </font>
