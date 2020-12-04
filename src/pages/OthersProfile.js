@@ -9,18 +9,9 @@ const OthersProfile = (props) => {
     const [profileImg, setProfileImg] = useState(props.profileImg);
     const [myTrainings, setMyTrainings] = useState([]);
 
-    // eslint-disable-next-line
     useEffect(() => {
         let nick = '?'
         nick = props.match.params.nickName;
-        // getUserNickName()
-        //     .then(r => {
-        //         nick = r
-        //         setNickName(r)
-        //     })
-        //     .then(() => getUserId())
-        //     .then(userId => setImgUpload(API_BASE_URL + '/profile/' + userId + '/image'))
-        //     .then(async () => {
         setProfileImg(API_BASE_URL + '/profile/' + nick + '/image')
         getHttp("/trainings")
             .then(r => {
@@ -32,20 +23,6 @@ const OthersProfile = (props) => {
             }).catch(error => {
                 console.log(error.response.data.message)
             })
-        // await getHttp("/training/likes")
-        //     .then(r => {
-        //         setMyLikeTrainings(r.data);
-        //     }).catch(error => {
-        //         console.log(error.response.data.message)
-        //     })
-        // await getHttp("/subscribes")
-        //     .then(r => {
-        //         console.log(r.data)
-        //         setMySubscribes(r.data);
-        //     }).catch(error => {
-        //         console.log(error.response.data.message)
-        //     })
-    // })
     // eslint-disable-next-line
 }, [])
 
@@ -73,22 +50,6 @@ return (
                         <Trainings trainings={myTrainings} />
                     </div>
                 </div>
-                {/* <div className='MyLikeTrainingArea'>
-                    <text className="MyUploadTrainingListTitle">
-                        내가 좋아요한 운동
-                        </text>
-                    <div className='MyUploadTriningListBackground'>
-                        <Trainings trainings={myLikeTrainings} />
-                    </div>
-                </div>
-                <div className='MySubscribeArea'>
-                    <text className="MyUploadTrainingListTitle">
-                        나의 구독 리스트
-                        </text>
-                    <div className='MyUploadTriningListBackground'>
-                        <Subscribes subscribes={mySubscribes} />
-                    </div>
-                </div> */}
             </div>
     </div>
 );

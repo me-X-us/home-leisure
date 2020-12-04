@@ -11,18 +11,6 @@
     text-overflow: ellipsis;
 }
 
-/* .InputButton {
-    margin-top: 4px;
-
-    width: 40px;
-    height: 40px;
-    color: #ffffff;
-    font-size: x-large;
-    border: none;
-    border-radius: 0.5rem;
-    margin-right: 40px;
-} */
-
 .Like {
     display: flex;
     flex-direction: row;

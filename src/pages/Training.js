@@ -21,7 +21,6 @@ const Training = (props) => {
         getTrainingInfo();
         getUserId()
             .then(r => setUserId(r));
-        console.log(props)
         // eslint-disable-next-line
     }, [props.match.params.trainingId]);
 

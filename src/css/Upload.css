@@ -7,7 +7,6 @@
     width: 63%;
     height: 500px;
     margin-right: 1%;
-    /* font-size: xx-large; */
     background: lightgray;
     border: none;
     border-radius: 1rem;
@@ -17,7 +16,6 @@
 .ThumbNailUpload {
     width: 32%;
     height: 500px;
-    /* font-size: xx-large; */
     background: lightgray;
     border: none;
     border-radius: 1rem;
