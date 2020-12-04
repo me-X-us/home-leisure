@@ -4,7 +4,7 @@ import { postHttp, API_BASE_URL } from '../utils/authHttpWrapper'
 
 const MyComment = (props) => {
     const [commentBody, setCommentBody] = useState('');
-    const defaultImg = "https://avatars1.githubusercontent.com/u/19163372?s=60&v=4";
+    const defaultImg = process.env.PUBLIC_URL + '/Gray.png'
     const [myImg, setMyImg] = useState(API_BASE_URL+'/profile/'+props.userId+'/image')
 
     const onChangeCommentBody = e => setCommentBody(e.target.value);
@@ -20,7 +20,6 @@ const MyComment = (props) => {
             }).catch(error => {
                 console.log('error on component : ', error.response.data)
             });
-            alert('입력되었습니다.')
             setCommentBody('')
         }
         else {
