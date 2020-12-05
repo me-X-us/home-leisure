@@ -3,12 +3,13 @@ import '../css/Comment.css';
 import { getUserId, putHttp, deleteHttp, API_BASE_URL } from '../utils/authHttpWrapper'
 import moment from 'moment';
 import 'moment/locale/ko';
+import { Link } from 'react-router-dom'
 
 const Comment = (props) => {
 
     const [isModify, setIsModify] = useState(false);
     const [modifiedComment, setModifiedComment] = useState('');
-    const imgDefault = "https://avatars0.githubusercontent.com/u/59818703?s=64&v=4"
+    const imgDefault = process.env.PUBLIC_URL + '/Gray.png'
     const [commenterImg, setCommenterImg] = useState(API_BASE_URL + '/profile/' + props.commenterId + '/image')
 
     useEffect(() => {
@@ -82,11 +83,15 @@ const Comment = (props) => {
 
     return (
         <div className='CommentList'>
-            <img className='MyProfile' src={commenterImg} onError={onImageError} alt="" />
+            <Link className='Page' to={"/page/" + props.comment.commenterId}>
+                <img className='MyProfile' src={commenterImg} onError={onImageError} alt="" />
+            </Link>
             <div>
                 <div className='CommentInfos'>
                     <div className='NameTime'>
-                        <div className='CommentName'>{props.comment.commenterId}</div>
+                        <Link className='Page' to={"/page/" + props.comment.commenterId}>
+                            <div className='CommentName'>{props.comment.commenterId}</div>
+                        </Link>
                         &nbsp;-&nbsp;
                         <text className='modifiedTime'>{setDate(props.modifiedDate)}</text>
                     </div>

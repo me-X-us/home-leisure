@@ -14,6 +14,7 @@ const SignUp = (props) => {
     const [chkPw, setChkPw] = useState("");
     const [email, setEmail] = useState("");
     const [chkEmail, setChkEmail] = useState("");
+    const logo = process.env.PUBLIC_URL + '/logo.png';
 
     const onChangeId = e => setId(e.target.value);
     const onChangeNick = e => setNick(e.target.value);
@@ -96,8 +97,7 @@ const SignUp = (props) => {
     return (
         <div className='SignUpWrapper'>
             <Link to='/'>
-                <button className='MainButton'>
-                </button>
+                <img className='MainButton' src={logo} alt={''} />
             </Link>
             <div>
                 <input className='NickIdInput' placeholder='닉네임' value={nick} onChange={onChangeNick} />{chkNick}

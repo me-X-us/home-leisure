@@ -7,10 +7,10 @@
     resize: none;
     font-size: xx-large;
     padding: 10px;
-    border: 2px solid black;
     border-radius: 1rem;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 .DuplicateButton {
@@ -21,9 +21,10 @@
     border: none;
     border-radius: 0.8rem;
     margin-bottom: 15px;
-    margin-left: 20px;
-    font-size: large;
+    margin-left: 10px;
+    font-size: medium;
     color: white;
+    background-color: mediumpurple;
 }
 
 .PwEmailInput {
@@ -43,6 +44,7 @@
     margin-top: 50px;
     border: none;
     border-radius: 1rem;
-    font-size: x-large;
+    font-size: large;
     color: white;
+    background-color: mediumpurple;
 }

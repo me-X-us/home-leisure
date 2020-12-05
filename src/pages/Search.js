@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import SearchVideoList from '../components/SearchVideoList';
-import Filter from '../components/Filter';
 import '../css/Search.css';
 import { getHttp } from '../utils/authHttpWrapper';
 
@@ -24,7 +23,6 @@ const Search = (props) => {
 
     return (
         <div className='SearchWrapper'>
-            <Filter />
             <div className='SearchVideoList'>
                 <SearchVideoList searchs={searchs} />
             </div>

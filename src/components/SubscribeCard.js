@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { API_BASE_URL } from '../utils/authHttpWrapper';
 import '../css/SubscribeCard.css';
+import { Link } from 'react-router-dom';
 
 const SubscribeCard = (props) => {
 
-    const imgDefault = 'https://avatars1.githubusercontent.com/u/50524321?s=460&u=7621eb647ffc21484a8ddb3914275574063c08cb&v=4';
+    const imgDefault = process.env.PUBLIC_URL + '/Gray.png'
     const [subscribeImage, setSubscribeImage] = useState('');
 
     useEffect(() => {
-        console.log(props.subscribe.trainerId)
         setSubscribeImage(API_BASE_URL + '/profile/' + props.subscribe.trainerId + '/image')
         // eslint-disable-next-line
     }, [])
@@ -18,10 +18,12 @@ const SubscribeCard = (props) => {
     }
 
     return (
-        <div className='Subscribe'>
-            <img className='SubscribeImg' src={subscribeImage} onError={onImageError} alt={''}/>
-            <text className='SubscribeName'>{props.subscribe.trainerName}</text>
-        </div>
+        <Link className='Page' to={"/page/" + props.subscribe.trainerName}>
+            <div className='Subscribe'>
+                <img className='SubscribeImg' src={subscribeImage} onError={onImageError} alt={''} />
+                <text className='SubscribeName'>{props.subscribe.trainerName}</text>
+            </div>
+        </Link>
     );
 };
 

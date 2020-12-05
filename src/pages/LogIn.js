@@ -9,6 +9,7 @@ const LogIn = (props) => {
     const [password, setPassword] = useState("");
     const onChangeId = e => setId(e.target.value);
     const onChangePawword = e => setPassword(e.target.value);
+    const logo = process.env.PUBLIC_URL + '/logo.png';
 
     useEffect(() => {
         redirectHome();
@@ -44,8 +45,7 @@ const LogIn = (props) => {
     return (
         <div className='LoginWrapper'>
             <Link to='/'>
-                <button className='MainButton'>
-                </button>
+                <img className='MainButton' src={logo} alt={''} />
             </Link>
             <div>
                 <input className='TextInput' value={id} placeholder='아이디' onChange={onChangeId} onKeyPress={onKeyPress} />

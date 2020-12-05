@@ -7,8 +7,8 @@
     height: 100px;
     margin: 100px;
     margin-bottom: 150px;
-    border: none;
     border-radius: 1rem;
+    padding-top: 0.3%;
     position: relative;
     align-items: center;
     align-self: center;
@@ -35,6 +35,7 @@
     border-radius: 1rem;
     font-size: xx-large;
     color: white;
+    background-color: mediumpurple;
 }
 
 .SignInButton {

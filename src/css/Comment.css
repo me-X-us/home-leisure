@@ -6,7 +6,7 @@
 }
 
 .CommentInfos {
-    width: 3%;
+    /* width: 3%; */
     padding-left: 20px;
     /* display: table-cell; */
     vertical-align: top;
@@ -17,14 +17,13 @@
     display: flex;
     flex-direction: row;
     font-size: small;
+    text-decoration: none;
 }
 
 .CommentName {
     overflow: hidden; 
     text-overflow: ellipsis;
-}
-
-.modifiedTime {
+    color: black;
 }
 
 .CommentBody {
