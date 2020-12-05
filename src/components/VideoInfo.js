@@ -51,7 +51,7 @@ const VideoInfo = (props) => {
             <div className='NameLike'>
                 <text className='TrainingVideoName'>{props.trainingInfo.title}</text>
                 <div className='Like'>
-                    <button className='LikeButton' onClick={addLike} />
+                    <button className={props.trainingInfo.like?'LikeButton':'nLikeButton'} onClick={addLike} />
                     <text>{like}</text>
                 </div>
                 {/* <button className='InputButton'>+</button> */}
@@ -65,7 +65,7 @@ const VideoInfo = (props) => {
                     <img className='Profile' src={trainerImg} onError={onImageError} alt="" />
                     <text className='ChannelName'>{props.trainingInfo.trainer}</text>
                 </Link>
-                <button className='SubscribeButton' onClick={ChangeSubscribe}>{subscribe ? '구독중' : '구독'}</button>
+                <button className={props.trainingInfo.subscribe?'SubscribeButton':'nSubscribeButton'} onClick={ChangeSubscribe}>{subscribe ? '구독중' : '구독'}</button>
             </div>
             <div className='VideoExplain'>
                 <text>{props.trainingInfo.body}</text>

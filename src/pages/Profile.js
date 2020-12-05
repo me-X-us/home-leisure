@@ -68,12 +68,14 @@ const Profile = (props) => {
             await putHttp('/profile', {
                 nickName: newNickName
             }).then(() => {
-                console.log(newNickName);
                 setNickNameChange(false);
                 setNickName(newNickName);
             }).catch(error => {
                 console.log('error on component : ', error.response.data)
             })
+        }
+        else if (nickNameChange === true && newNickName === ''){
+            setNickNameChange(false);
         }
     }
 
@@ -122,12 +124,10 @@ const Profile = (props) => {
                     <button className='ProfileImgEditButton' onClick={submitImage}>프로필 편집</button>
                 </div>
                 <div className='NickNameInfo'>
-                    <div>
-                        <div className='NickName'>{nickNameChange ?
-                            <input onChange={onChangeNickName} onKeyPress={onKeyPress}
-                                placeholder={nickName} /> : nickName}</div>
-                        <button className='NickNameEditButton' onClick={changeNickName}>닉네임 편집</button>
-                    </div>
+                    <div className='NickName'>{nickNameChange ?
+                        <input className='NickNameInput' onChange={onChangeNickName} onKeyPress={onKeyPress}
+                            placeholder={nickName} /> : nickName}</div>
+                    <button className='NickNameEditButton' onClick={changeNickName}>닉네임 편집</button>
                 </div>
             </div>
             <div className='MyArea'>

@@ -24,6 +24,35 @@
     justify-content: space-between;
 }
 
+.nLikeButton {
+    top: 15px;
+    width: 22px;
+    height: 22px;
+    background: gray;
+    position: relative;
+    transform: rotate(-135deg);
+    border: none;
+    margin-right: 10px;
+  }
+  .nLikeButton::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: -0%;
+    background: gray;
+    border-radius: 50%;
+  }
+  .nLikeButton::after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: -0%;
+    background: gray;
+    border-radius: 50%;
+  }
+
  .LikeButton {
     top: 15px;
     width: 22px;
@@ -86,12 +115,23 @@
     text-overflow: ellipsis;
 }
 
-.SubscribeButton {
+.nSubscribeButton {
     width: 60px;
     height: 40px;
     float: right;
     color: #ffffff;
     background-color: mediumpurple;
+    font-size: medium;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.SubscribeButton {
+    width: 60px;
+    height: 40px;
+    float: right;
+    color: #ffffff;
+    background-color: gray;
     font-size: medium;
     border: none;
     border-radius: 0.5rem;
