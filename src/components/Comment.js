@@ -86,21 +86,19 @@ const Comment = (props) => {
             <Link className='Page' to={"/page/" + props.comment.commenterId}>
                 <img className='MyProfile' src={commenterImg} onError={onImageError} alt="" />
             </Link>
-            <div>
-                <div className='CommentInfos'>
-                    <div className='NameTime'>
-                        <Link className='Page' to={"/page/" + props.comment.commenterId}>
-                            <div className='CommentName'>{props.comment.commenterId}</div>
-                        </Link>
-                        &nbsp;-&nbsp;
+            <div className='CommentInfos'>
+                <div className='NameTime'>
+                    <Link className='Page' to={"/page/" + props.comment.commenterId}>
+                        <div className='CommentName'>{props.comment.commenterId}</div>
+                    </Link>
+                    &nbsp;-&nbsp;
                         <text className='modifiedTime'>{setDate(props.modifiedDate)}</text>
-                    </div>
-                    <div className='CommentBody'>
-                        {isModify ? <input value={modifiedComment} placeholder={props.comment.message} onChange={onChangeModifedComment} onKeyPress={onKeyPress} /> : props.comment.message}
-                    </div>
-                    <button className='Modify' onClick={onModifyComment} >수정</button>
-                    <button className='Delete' onClick={onDeleteComment} >삭제</button>
                 </div>
+                <div className='CommentBody'>
+                    {isModify ? <input value={modifiedComment} placeholder={props.comment.message} onChange={onChangeModifedComment} onKeyPress={onKeyPress} /> : props.comment.message}
+                </div>
+                <button className='Modify' onClick={onModifyComment} >수정</button>
+                <button className='Delete' onClick={onDeleteComment} >삭제</button>
             </div>
         </div>
     );

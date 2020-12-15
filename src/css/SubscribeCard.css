@@ -12,9 +12,11 @@
 }
 
 .SubscribeName {
+    max-width: 280px;
     vertical-align: top;
     color: black;
     font-size: xx-large;
-
     margin-left: 1.5%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

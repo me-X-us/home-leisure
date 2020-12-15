@@ -18,7 +18,6 @@
     height: 350px;
     border-radius: 50%;
     border: 1px solid lightgray;
-    /* margin-right: 100px; */
 }
 
 .ProfileImgInput {
@@ -29,6 +28,7 @@
     margin-top: 10px;
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .NickNameInfo {
@@ -37,11 +37,14 @@
 }
 
 .NickName {
+    max-width: 700px;
     font-size: 100px;
     vertical-align: top;
     text-align: center;
-    /* margin-left: 100%; */
     margin-bottom: 150px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .NickNameInput {
@@ -56,6 +59,7 @@
     font-size: xx-large;
     border: none;
     border-radius: 1.5rem;
+    cursor: pointer;
 }
 
 .MyArea {
@@ -65,12 +69,33 @@
     justify-content: space-around;
 }
 
+.MyListArea {
+    width: 72%;
+}
+
+.ListTitles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .MyTrainingArea {
     display: table-cell;
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+.MyLikeTrainingArea {
+    padding: 10px;
+    width: 50%;
+    text-align: center;
 }
 
 .MyUploadTrainingListTitle {
     font-size: xx-large;
+    border: none;
+    background: none;
 }
 
 .UploadButton {
@@ -78,6 +103,7 @@
     width: 42px;
     height: 42px;                            
     background-color: mediumpurple;
+    margin-left: 10px;
     padding-top: 0px;
     border: none;
     border-radius: 0.7rem;
@@ -86,10 +112,28 @@
     vertical-align: center;
 }
 
-.MyUploadTriningListBackground {
+.MyTrainingList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.MyTriningListBackground {
+    background-color: lightgray;
+    min-width: 100%;
+    min-height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.MySubscribeTitle {
+    padding: 10px;
+}
+
+.MySubscribeListBackground {
     background-color: lightgray;
     width: 340px;
-    margin-top: 10px;
+    min-height: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
 }

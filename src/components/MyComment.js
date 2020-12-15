@@ -36,7 +36,7 @@ const MyComment = (props) => {
     }
 
     return (
-        <div>
+        <div className='MyCommentWrapper'>
             <div className='Comment'>
                 <text>
                     댓글
