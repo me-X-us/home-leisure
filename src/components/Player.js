@@ -65,7 +65,6 @@ function Player(props) {
 
     const onPause = (e) => {
         setPlaying(false);
-        console.log(player.playing)
     };
     const onPlay = (e) => {
         setPlaying(true);
