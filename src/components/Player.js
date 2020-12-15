@@ -38,7 +38,6 @@ function Player(props) {
         } else {
             setFeedbackColor('green');
         }
-
     }, [score]);
 
     async function estimate(curFrame, setState, a) {
@@ -71,7 +70,6 @@ function Player(props) {
     const onPlay = (e) => {
         setPlaying(true);
         player.seekTo(playedSeconds);
-        console.log(playing)
     };
 
     const onSeek = (e) => {
@@ -86,7 +84,7 @@ function Player(props) {
         setPlaying(true);
     }
     return (
-        <div style={{border: "10px solid "+feedbackColor, boxShadow: "0 -5px 0 1px "+feedbackColor+" inset"}}>
+        <div style={{border: "10px solid "+ feedbackColor, boxShadow: "0 -5px 0 1px "+ feedbackColor +" inset"}}>
             <ReactPlayer
                 //id="player"
                 style={{float: "left", zIndex:9999, padding:-10}}
@@ -125,9 +123,9 @@ function Player(props) {
                 curFrame={curFrame}
             />
             <div style={{fontSize: "30px",width:"100%",display:"flex",justifyContent: "center"}}></div>
-{/*            <div style={{background: style,fontSize: "30px",width:"100%",display:"flex",justifyContent: "center"}}>
-                {score}
-            </div>*/}
+            <div style={{background: feedbackColor,fontSize: "3vw",width:"16%", left:"42%",top:"12%", position:"absolute", textAlign:"center"}}>
+                {Math.floor(score).toString().padStart(3,' ')+"/100"}
+            </div>
         </div>
 
 

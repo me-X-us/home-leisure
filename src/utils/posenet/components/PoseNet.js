@@ -57,8 +57,8 @@ export default function PoseNet({
             minPartConfidence
           )
           onEstimateRef.current(confidentPoses)
+          // confidentPoses.forEach(({ keypoints }) => drawKeypoints(ctx, keypoints))
         }
-        // confidentPoses.forEach(({ keypoints }) => drawKeypoints(ctx, keypoints))
       } catch (err) {
         cleanUp()
         setErrorMessage(err.message)
