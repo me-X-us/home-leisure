@@ -122,7 +122,7 @@ function Player(props) {
                 curFrame={curFrame}
             />
             <div style={{fontSize: "30px",width:"100%",display:"flex",justifyContent: "center"}}></div>
-            <div style={{background: feedbackColor,fontSize: "3vw",width:"16%", left:"42%",top:"12%", position:"absolute", textAlign:"center"}}>
+            <div style={{background: feedbackColor,fontSize: "3vw",width:"16%", left:"42%",top:"11%", position:"absolute", textAlign:"center"}}>
                 {Math.floor(score).toString().padStart(3,' ')+"/100"}
             </div>
         </div>
