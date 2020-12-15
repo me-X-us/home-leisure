@@ -24,7 +24,7 @@ const SearchVideo = (props) => {
 
     return (
         <div className='Search'>
-            <Link className='SearchVideo' to='/training'>
+            <Link className='SearchVideo' to={'/training/'+props.training.trainingId} >
                 <div className='SearchVideoWrapper'>
                     {/* 나중에 List로 구현 */}
 
