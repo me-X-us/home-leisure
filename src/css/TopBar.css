@@ -16,6 +16,7 @@
     border-radius: 0.5rem;
     padding-top: 0.3%;
     height: 36px;
+    cursor: pointer;
 }
 
 .Search {
@@ -60,6 +61,7 @@
     border: none;
     border-radius: 0.5rem;
     height: 36px;
+    cursor: pointer;
 }
 
   .line {

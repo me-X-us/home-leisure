@@ -17,6 +17,7 @@ const Profile = (props) => {
     const [myTrainings, setMyTrainings] = useState([]);
     const [myLikeTrainings, setMyLikeTrainings] = useState([]);
     const [mySubscribes, setMySubscribes] = useState([]);
+    const [listState, setlistState] = useState(false);
 
     // eslint-disable-next-line
     useEffect(() => {
@@ -74,7 +75,7 @@ const Profile = (props) => {
                 console.log('error on component : ', error.response.data)
             })
         }
-        else if (nickNameChange === true && newNickName === ''){
+        else if (nickNameChange === true && newNickName === '') {
             setNickNameChange(false);
         }
     }
@@ -115,6 +116,14 @@ const Profile = (props) => {
         setImgUpload(imgDefault);
     }
 
+    const onChangelistState1 = () => {
+        setlistState(true);
+    }
+
+    const onChangelistState2 = () => {
+        setlistState(false);
+    }
+
     return (
         <div className='ProfileWrapper'>
             <div className='ProfileInfo'>
@@ -131,30 +140,27 @@ const Profile = (props) => {
                 </div>
             </div>
             <div className='MyArea'>
-                <div className='MyTrainingArea'>
-                    <text className="MyUploadTrainingListTitle">
-                        내가 올린 운동
-                        </text>
-                    <Link to='/upload'>
-                        <button className='UploadButton'>+</button>
-                    </Link>
-                    <div className='MyUploadTriningListBackground'>
-                        <Trainings trainings={myTrainings} />
+                <div className='MyListArea'>
+                    <div className='ListTitles'>
+                        <div className='MyTrainingArea' onClick={onChangelistState2} style={listState ? { cursor:'pointer' } : { background: 'lightgray' }}>
+                            <text className="MyUploadTrainingListTitle">내가 올린 운동</text>
+                            <Link to='/upload'><button className='UploadButton'>+</button></Link>
+                        </div>
+                        <div className='MyLikeTrainingArea' onClick={onChangelistState1} style={listState ? { background:'lightgray' } : { cursor:'pointer' }}>
+                            <text className="MyUploadTrainingListTitle">내가 좋아요한 운동</text>
+                        </div>
                     </div>
-                </div>
-                <div className='MyLikeTrainingArea'>
-                    <text className="MyUploadTrainingListTitle">
-                        내가 좋아요한 운동
-                        </text>
-                    <div className='MyUploadTriningListBackground'>
-                        <Trainings trainings={myLikeTrainings} />
+                    <div className='MyTrainingList'>
+                        {listState ? <div className='MyTriningListBackground'><Trainings trainings={myLikeTrainings} /></div> : <div className='MyTriningListBackground'><Trainings trainings={myTrainings} /></div>}
                     </div>
                 </div>
                 <div className='MySubscribeArea'>
-                    <text className="MyUploadTrainingListTitle">
-                        나의 구독 리스트
+                    <div className='MySubscribeTitle'>
+                        <text className="MyUploadTrainingListTitle">
+                            나의 구독 리스트
                         </text>
-                    <div className='MyUploadTriningListBackground'>
+                    </div>
+                    <div className='MySubscribeListBackground'>
                         <Subscribes subscribes={mySubscribes} />
                     </div>
                 </div>

@@ -49,7 +49,7 @@ const VideoInfo = (props) => {
     return (
         <div className='VideoInfos'>
             <div className='NameLike'>
-                <text className='TrainingVideoName'>{props.trainingInfo.title}</text>
+                <div className='TrainingVideoName'>{props.trainingInfo.title}</div>
                 <div className='Like'>
                     <button className={props.trainingInfo.like?'LikeButton':'nLikeButton'} onClick={addLike} />
                     <text>{like}</text>

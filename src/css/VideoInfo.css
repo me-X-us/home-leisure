@@ -1,7 +1,8 @@
 .VideoInfos {
+    width: 96%;
     margin-top: 15px;
-    margin-right: 40px;
-    margin-left: 30px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .TrainingVideoName {
@@ -9,6 +10,9 @@
     font-size: xx-large;
     overflow: hidden; 
     text-overflow: ellipsis;
+    display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .Like {
@@ -33,6 +37,7 @@
     transform: rotate(-135deg);
     border: none;
     margin-right: 10px;
+    cursor: pointer;
   }
   .nLikeButton::before {
     content: "";
@@ -62,6 +67,7 @@
     transform: rotate(-135deg);
     border: none;
     margin-right: 10px;
+    cursor: pointer;
   }
   .LikeButton::before {
     content: "";
@@ -124,6 +130,7 @@
     font-size: medium;
     border: none;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .SubscribeButton {
@@ -135,14 +142,13 @@
     font-size: medium;
     border: none;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .VideoExplain {
     margin-left: 65px;
     margin-top: 20px;
     margin-bottom: 30px;
-    width: 92%;
+    max-width: 92%;
     max-height: 100px;
-    overflow: hidden; 
-    text-overflow: ellipsis;
 }
