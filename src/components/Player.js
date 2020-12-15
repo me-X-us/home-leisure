@@ -16,7 +16,7 @@ function Player(props) {
     const [player, setPlayer] = useState();
     const [playing, setPlaying] = useState(false);
     const [score, setScore] = useState(0.0);
-    const [style, setStyle] = useState('red');
+    const [feedbackColor, setFeedbackColor] = useState('red');
     const [mockData, setMockData] = useState([]);
     const [fLen, setFLen] = useState(0);
     const [playedSeconds, setPlayedSeconds] = useState();
@@ -32,13 +32,12 @@ function Player(props) {
 
     useEffect(() => {
         if (0 <= score && score < 60) {
-            setStyle('red');
+            setFeedbackColor('red');
         } else if (60 <= score && score < 88) {
-            setStyle('yellow');
+            setFeedbackColor('yellow');
         } else {
-            setStyle('green');
+            setFeedbackColor('green');
         }
-
     }, [score]);
 
     async function estimate(curFrame, setState, a) {
@@ -71,37 +70,46 @@ function Player(props) {
     const onPlay = (e) => {
         setPlaying(true);
         player.seekTo(playedSeconds);
-        console.log(playing)
     };
 
     const onSeek = (e) => {
         setPlayedSeconds(e);
         player.seekTo(e)
     };
+
+    function onBuffer() {
+        setPlaying(false);
+    }
+    function onBufferEnd() {
+        setPlaying(true);
+    }
     return (
-        <div>
+        <div style={{border: "10px solid "+ feedbackColor, boxShadow: "0 -5px 0 1px "+ feedbackColor +" inset"}}>
             <ReactPlayer
-                id="player"
+                //id="player"
+                style={{float: "left", zIndex:9999, padding:-10}}
                 url={"https://mexusapi.codingnome.dev/streaming/training/"+ props.trainingId + "/video"} playing controls
                 width="50%"
-                height="100%"
+                height="50%"
                 onPlay={onPlay}
                 onPause={onPause}
                 onSeek={onSeek}
+                onBuffer={onBuffer}
+                onBufferEnd={onBufferEnd}
                 progressInterval={1000 / 10}
                 onProgress={onProgress}
                 // eslint-disable-next-line
                 playing={playing}
             />
             <ReactPlayer
-                id="player"
+                style={{float: "left", zIndex:9999, padding:0}}
                 className="shape"
                 ref={p => setPlayer(p)}
                 url={'https://mexusapi.codingnome.dev/streaming/training/' + props.trainingId + '/shape'} playing
                 width="50%"
+                height="50%"
                 // eslint-disable-next-line
                 playing={playing}
-                height="100%"
             />
             <PoseNet
                 className="cam"
@@ -110,12 +118,13 @@ function Player(props) {
                 frameRate={frameRate}
                 flipHorizontal={true}
                 //width={}
-                height={336}
+                height={340}
                 minPoseConfidence={minPoseConfidence}
                 curFrame={curFrame}
             />
-            <div style={{background: style,fontSize: "30px",width:"100%",display:"flex",justifyContent: "center"}}>
-                {score}
+            <div style={{fontSize: "30px",width:"100%",display:"flex",justifyContent: "center"}}></div>
+            <div style={{background: feedbackColor,fontSize: "3vw",width:"16%", left:"42%",top:"12%", position:"absolute", textAlign:"center"}}>
+                {Math.floor(score).toString().padStart(3,' ')+"/100"}
             </div>
         </div>
 
